@@ -1,26 +1,32 @@
 const cardsMorning = [
   {
-    title: "",
-    image: "",
+    id: "1",
+    title: "Gå på toa",
+    image: "images/toilet.png",
   },
   {
-    title: "",
-    image: "",
+    id: "2",
+    title: "Klä på dig",
+    image: "images/clothes.png",
   },
   {
-    title: "",
-    image: "",
+    id: "3",
+    title: "Ät frukost",
+    image: "images/breakfast.png",
   },
   {
-    title: "",
-    image: "",
+    id: "4",
+    title: "Borsta tänder",
+    image: "images/toothbrush.png",
   },
   {
-    title: "",
-    image: "",
+    id: "5",
+    title: "Packa väskan",
+    image: "images/backpack.png",
   },
   {
-    title: "",
-    image: "",
+    id: "6",
+    title: "Klä på ytterkläder",
+    image: "images/shoes.png",
   },
 ];
