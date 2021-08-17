@@ -30,3 +30,5 @@ const cardsMorning = [
     image: "images/shoes.png",
   },
 ];
+
+export default cardsMorning;
