@@ -11,7 +11,7 @@ TBA
 
 ### Goals & Reflection
 
-I want to focus on and improve my Javascript and React skills. I choosed an old project that I want to develop further. It was my very first Javascript project, you can read more about it here. Now I want to add more functionality and options for the player.
+I want to focus on and improve my Javascript and React skills. I choosed an old project that I want to develop further. It was my very first Javascript [project](https://github.com/elinamren/goodmorning). Now I want to add more functionality and options for the player.
 
 ### Challenges
 
