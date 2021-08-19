@@ -1,6 +1,17 @@
+import { useState } from "react";
+
 const Info = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  function closeInfo() {
+    console.log("clicked, please close div now");
+    setIsOpen(false);
+    console.log(isOpen);
+  }
   return (
-    <div className="info container">
+    <div
+      className="info container"
+      style={{ display: isOpen ? "block" : "none" }}
+    >
       <h2>Välkommen</h2>
       <p>
         Klara av alla morgon och kvällsuppgifter på ett kul och lekfullt sätt.
@@ -25,7 +36,7 @@ const Info = () => {
         </a>
       </p>
       <br />
-      <button>Stäng</button>
+      <button onClick={closeInfo}>Stäng</button>
     </div>
   );
 };
