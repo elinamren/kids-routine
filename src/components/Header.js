@@ -1,8 +1,7 @@
-const Header = () => {
-  const name = "Molly";
+const Header = (props) => {
   return (
     <header>
-      <h1>God morgon {name}</h1>
+      <h1>God morgon {props.name}</h1>
     </header>
   );
 };

@@ -8,9 +8,13 @@ import Star from "./components/Star";
 import Settings from "./components/Settings";
 
 function App() {
+  const name = "Molly";
+  const [earnedStars, setEarnedStars] = useState([1]);
+
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const [isStarOpen, setIsStarOpen] = useState(false);
 
+  // Function that can work for all classes, need to figure out the id thing though
   const [isOpen, setIsOpen] = useState({
     info: false,
     star: false,
@@ -30,20 +34,29 @@ function App() {
     });
   }
 
+  //--------------------------------------
+
   function handleInfo(event) {
     setIsInfoOpen((prevValue) => {
       return !prevValue;
     });
   }
-  function handleStars() {
+  function handleStarsModal() {
     setIsStarOpen((prevValue) => {
       return !prevValue;
     });
   }
+
+  function handleStars() {
+    console.log("pling");
+    setEarnedStars((prevValue) => [...prevValue, prevValue.length + 1]);
+    console.log(earnedStars);
+  }
+
   return (
     <div className="App">
-      <Header />
-      <Cards />
+      <Header name={name} />
+      <Cards onClick={handleStars} />
       <IconButton
         src="images/info.png"
         alt="info"
@@ -61,15 +74,26 @@ function App() {
         src="images/star.png"
         alt="star"
         id="star-button"
-        onClick={handleStars}
+        onClick={handleStarsModal}
       />
       <Info
         onClick={handleInfo}
         style={{ display: isInfoOpen ? "block" : "none" }}
       />
       <Star
-        onClick={handleStars}
+        onClick={handleStarsModal}
         style={{ display: isStarOpen ? "block" : "none" }}
+        name={name}
+        star={earnedStars.length}
+        starDisplay={earnedStars.map((star) => (
+          <img
+            src="/images/star.png"
+            alt=""
+            width="50"
+            height="50"
+            key={star}
+          />
+        ))}
       />
       <Settings
         onClick={handleModal}
