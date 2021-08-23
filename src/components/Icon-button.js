@@ -1,6 +1,6 @@
 const IconButton = (props) => {
   return (
-    <button className="icon-button" id={props.id}>
+    <button className="icon-button" id={props.id} onClick={props.onClick}>
       <img src={props.src} alt={props.alt} width="65" height="65" />
     </button>
   );

@@ -1,17 +1,6 @@
-import { useState } from "react";
-
-const Info = () => {
-  const [isOpen, setIsOpen] = useState(true);
-  function closeInfo() {
-    console.log("clicked, please close div now");
-    setIsOpen(false);
-    console.log(isOpen);
-  }
+const Info = (props) => {
   return (
-    <div
-      className="info container"
-      style={{ display: isOpen ? "block" : "none" }}
-    >
+    <div className="info container" style={props.style}>
       <h2>Välkommen</h2>
       <p>
         Klara av alla morgon och kvällsuppgifter på ett kul och lekfullt sätt.
@@ -21,7 +10,8 @@ const Info = () => {
       <br />
       <p>
         Detta är ett Hyper Island skolprojekt som är utvecklat av Elin Amrén,
-        mer information hittar du på Github.
+        mer information hittar du på{" "}
+        <a href="https://github.com/elinamren/goodmorning">Github</a>.
       </p>
       <br />
       <h4>CRED</h4>
@@ -36,7 +26,7 @@ const Info = () => {
         </a>
       </p>
       <br />
-      <button onClick={closeInfo}>Stäng</button>
+      <button onClick={props.onClick}>Stäng</button>
     </div>
   );
 };
