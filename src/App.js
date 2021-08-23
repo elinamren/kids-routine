@@ -4,11 +4,18 @@ import Header from "./components/Header.js";
 import IconButton from "./components/Icon-button";
 import Info from "./components/Info";
 import { useState } from "react";
+import Star from "./components/Star";
 
 function App() {
   const [isInfoOpen, setIsInfoOpen] = useState(false);
+  const [isStarOpen, setIsStarOpen] = useState(false);
   function handleInfo() {
     setIsInfoOpen((prevValue) => {
+      return !prevValue;
+    });
+  }
+  function handleStars() {
+    setIsStarOpen((prevValue) => {
       return !prevValue;
     });
   }
@@ -27,10 +34,19 @@ function App() {
         alt="settings"
         id="settings-button"
       />
-      <IconButton src="images/star.png" alt="star" id="star-button" />
+      <IconButton
+        src="images/star.png"
+        alt="star"
+        id="star-button"
+        onClick={handleStars}
+      />
       <Info
         onClick={handleInfo}
         style={{ display: isInfoOpen ? "block" : "none" }}
+      />
+      <Star
+        onClick={handleStars}
+        style={{ display: isStarOpen ? "block" : "none" }}
       />
     </div>
   );
