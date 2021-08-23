@@ -5,11 +5,32 @@ import IconButton from "./components/Icon-button";
 import Info from "./components/Info";
 import { useState } from "react";
 import Star from "./components/Star";
+import Settings from "./components/Settings";
 
 function App() {
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const [isStarOpen, setIsStarOpen] = useState(false);
-  function handleInfo() {
+
+  const [isOpen, setIsOpen] = useState({
+    info: false,
+    star: false,
+    settings: false,
+  });
+
+  function handleModal(event) {
+    const classes = event.target.className;
+    const words = classes.split(" ");
+    const id = words[1];
+
+    setIsOpen((prevValue) => {
+      return {
+        ...prevValue,
+        [id]: !prevValue[id],
+      };
+    });
+  }
+
+  function handleInfo(event) {
     setIsInfoOpen((prevValue) => {
       return !prevValue;
     });
@@ -33,6 +54,8 @@ function App() {
         src="images/settings.png"
         alt="settings"
         id="settings-button"
+        onClick={handleModal}
+        className="settings"
       />
       <IconButton
         src="images/star.png"
@@ -47,6 +70,10 @@ function App() {
       <Star
         onClick={handleStars}
         style={{ display: isStarOpen ? "block" : "none" }}
+      />
+      <Settings
+        onClick={handleModal}
+        style={{ display: isOpen.settings ? "block" : "none" }}
       />
     </div>
   );

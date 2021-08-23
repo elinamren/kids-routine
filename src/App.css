@@ -58,7 +58,7 @@ button {
   border-radius: 30px;
   padding: 15px 40px;
   cursor: pointer;
-  margin-top: 50px;
+  margin: 50px 5px 5px 5px;
 }
 
 .cards-container {
@@ -88,6 +88,10 @@ button {
   position: absolute;
   padding: 0;
   margin: 0;
+}
+
+.icon-button img {
+  pointer-events: none;
 }
 
 #info-button {

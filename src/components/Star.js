@@ -10,7 +10,13 @@ const Star = (props) => {
       </p>
       <div>
         {earnedStars.map((star) => (
-          <img src="/images/star.png" alt="" width="50" height="50" />
+          <img
+            src="/images/star.png"
+            alt=""
+            width="50"
+            height="50"
+            key={star}
+          />
         ))}
       </div>
       <br />
