@@ -8,11 +8,26 @@ import Star from "./components/Star";
 import Settings from "./components/Settings";
 
 function App() {
-  const name = "Molly";
+  const positionY = Math.floor(Math.random() * 970 + 1);
+  const positionX = Math.floor(Math.random() * 336 + 1);
+
   const [earnedStars, setEarnedStars] = useState([1]);
 
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const [isStarOpen, setIsStarOpen] = useState(false);
+
+  // NAME
+  const [inputValue, setInputValue] = useState("");
+  const [name, setName] = useState("");
+  function handleInputValue(event) {
+    setInputValue(event.target.value);
+  }
+
+  function handleName() {
+    setName(inputValue);
+  }
+
+  // --------------------
 
   // Function that can work for all classes, need to figure out the id thing though
   const [isOpen, setIsOpen] = useState({
@@ -98,6 +113,8 @@ function App() {
       <Settings
         onClick={handleModal}
         style={{ display: isOpen.settings ? "block" : "none" }}
+        onChange={handleInputValue}
+        handleName={handleName}
       />
     </div>
   );

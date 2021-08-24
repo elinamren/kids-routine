@@ -58,7 +58,7 @@ button {
   border-radius: 30px;
   padding: 15px 40px;
   cursor: pointer;
-  margin: 50px 5px 5px 5px;
+  margin: 5px;
 }
 
 .cards-container {
@@ -126,4 +126,10 @@ button {
 
 .info p {
   font-size: 30px;
+}
+
+.star-board {
+  width: 100%;
+  height: 60%;
+  position: relative;
 }
