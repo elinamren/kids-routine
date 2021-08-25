@@ -11,8 +11,6 @@ function App() {
   function getRandom(number) {
     return Math.floor(Math.random() * number + 1);
   }
-  //const positionY = Math.floor(Math.random() * 970 + 1);
-  //const positionX = Math.floor(Math.random() * 336 + 1);
 
   const [earnedStars, setEarnedStars] = useState([]);
 
