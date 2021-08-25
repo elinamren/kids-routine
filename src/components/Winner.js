@@ -18,7 +18,7 @@ const Winner = (props) => {
     } else {
       setTheme("kväll");
     }
-  });
+  }, [hour]);
 
   return (
     <div
