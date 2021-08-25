@@ -6,6 +6,7 @@ import Info from "./components/Info";
 import { useState } from "react";
 import Star from "./components/Star";
 import Settings from "./components/Settings";
+import Winner from "./components/Winner";
 
 function App() {
   function getRandom(number) {
@@ -109,7 +110,7 @@ function App() {
         starDisplay={earnedStars.map((star) => (
           <img
             src="/images/star.png"
-            alt=""
+            alt="star"
             width="50"
             height="50"
             key={star}
@@ -127,6 +128,7 @@ function App() {
         onChange={handleInputValue}
         handleName={handleName}
       />
+      <Winner name={name} star={earnedStars.length} />
     </div>
   );
 }

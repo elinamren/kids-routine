@@ -6,12 +6,12 @@ const Cards = (props) => {
       {cardsMorning.map((card) => {
         return (
           <div key={card.id} className="card" onClick={props.onClick}>
-            <div class="card-inner">
-              <div class="card-front">
+            <div className="card-inner">
+              <div className="card-front">
                 <img src={card.image} alt={card.title} className="icon" />
                 <h3>{card.title}</h3>
               </div>
-              <div class="card-back">
+              <div className="card-back">
                 <img src="/images/star.png" alt="star" className="icon" />
                 <h3>Bra!</h3>
               </div>
