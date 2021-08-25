@@ -1,6 +1,6 @@
 const Settings = (props) => {
   return (
-    <div className="star container" style={props.style}>
+    <div className="container" style={props.style}>
       <h2>Inställningar</h2>
       <p>Här kan du ändra namn, vilka uppgifter som ska synas osv.</p>
       <br />
