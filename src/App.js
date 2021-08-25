@@ -8,17 +8,19 @@ import Star from "./components/Star";
 import Settings from "./components/Settings";
 
 function App() {
-  const positionY = Math.floor(Math.random() * 970 + 1);
-  const positionX = Math.floor(Math.random() * 336 + 1);
+  //const positionY = Math.floor(Math.random() * 970 + 1);
+  //const positionX = Math.floor(Math.random() * 336 + 1);
 
-  const [earnedStars, setEarnedStars] = useState([1]);
+  const [earnedStars, setEarnedStars] = useState([]);
 
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const [isStarOpen, setIsStarOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   // NAME
   const [inputValue, setInputValue] = useState("");
   const [name, setName] = useState("");
+
   function handleInputValue(event) {
     setInputValue(event.target.value);
   }
@@ -30,28 +32,28 @@ function App() {
   // --------------------
 
   // Function that can work for all classes, need to figure out the id thing though
-  const [isOpen, setIsOpen] = useState({
-    info: false,
-    star: false,
-    settings: false,
-  });
+  // const [isOpen, setIsOpen] = useState({
+  //   info: false,
+  //   star: false,
+  //   settings: false,
+  // });
 
-  function handleModal(event) {
-    const classes = event.target.className;
-    const words = classes.split(" ");
-    const id = words[1];
+  // function handleModal(event) {
+  //   const classes = event.target.className;
+  //   const words = classes.split(" ");
+  //   const id = words[1];
 
-    setIsOpen((prevValue) => {
-      return {
-        ...prevValue,
-        [id]: !prevValue[id],
-      };
-    });
-  }
+  //   setIsOpen((prevValue) => {
+  //     return {
+  //       ...prevValue,
+  //       [id]: !prevValue[id],
+  //     };
+  //   });
+  // }
 
   //--------------------------------------
 
-  function handleInfo(event) {
+  function handleInfoModal() {
     setIsInfoOpen((prevValue) => {
       return !prevValue;
     });
@@ -61,28 +63,31 @@ function App() {
       return !prevValue;
     });
   }
+  function handleSettingsModal() {
+    setIsSettingsOpen((prevValue) => {
+      return !prevValue;
+    });
+  }
 
-  function handleStars() {
-    console.log("pling");
+  function countStars() {
     setEarnedStars((prevValue) => [...prevValue, prevValue.length + 1]);
-    console.log(earnedStars);
   }
 
   return (
     <div className="App">
       <Header name={name} />
-      <Cards onClick={handleStars} />
+      <Cards onClick={countStars} />
       <IconButton
         src="images/info.png"
         alt="info"
         id="info-button"
-        onClick={handleInfo}
+        onClick={handleInfoModal}
       />
       <IconButton
         src="images/settings.png"
         alt="settings"
         id="settings-button"
-        onClick={handleModal}
+        onClick={handleSettingsModal}
         className="settings"
       />
       <IconButton
@@ -92,7 +97,7 @@ function App() {
         onClick={handleStarsModal}
       />
       <Info
-        onClick={handleInfo}
+        onClick={handleInfoModal}
         style={{ display: isInfoOpen ? "block" : "none" }}
       />
       <Star
@@ -111,8 +116,8 @@ function App() {
         ))}
       />
       <Settings
-        onClick={handleModal}
-        style={{ display: isOpen.settings ? "block" : "none" }}
+        onClick={handleSettingsModal}
+        style={{ display: isSettingsOpen ? "block" : "none" }}
         onChange={handleInputValue}
         handleName={handleName}
       />

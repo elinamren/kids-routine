@@ -1,6 +1,6 @@
 const Info = (props) => {
   return (
-    <div className="info container" style={props.style}>
+    <div className="container" style={props.style}>
       <h2>Välkommen</h2>
       <p>
         Klara av alla morgon och kvällsuppgifter på ett kul och lekfullt sätt.
