@@ -82,6 +82,7 @@ function App() {
   useEffect(() => {
     if (flippedCards === 6) {
       console.log("Winner");
+      setIsWinnerOpen(true);
     }
   }, [flippedCards]);
   function countStars(event) {
