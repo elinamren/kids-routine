@@ -7,6 +7,10 @@ const Settings = (props) => {
       <label htmlFor="name">Namn: </label>
       <input type="text" name="name" onChange={props.onChange} />
       <br />
+      <h4>Byt morgonuppgifter</h4>
+      <input type="checkbox" name="toilet" id="" />
+      <label htmlFor="toilet">Gå på toaletten</label>
+
       <p>Nollställ insamlade stjärnor</p>
       <button onClick={props.deleteStars}>Ok</button>
       <button onClick={props.onClick}>Tillbaka</button>
