@@ -130,6 +130,7 @@ function App() {
         star={earnedStars.length}
         starDisplay={earnedStars.map((star) => (
           <img
+            className="star-blink"
             src="/images/star.png"
             alt="star"
             width="50"
