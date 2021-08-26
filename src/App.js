@@ -3,7 +3,7 @@ import Cards from "./components/Cards";
 import Header from "./components/Header.js";
 import IconButton from "./components/Icon-button";
 import Info from "./components/Info";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Star from "./components/Star";
 import Settings from "./components/Settings";
 import Winner from "./components/Winner";
@@ -18,6 +18,13 @@ function App() {
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const [isStarOpen, setIsStarOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isWinnerOpen, setIsWinnerOpen] = useState(false);
+
+  function handleWinnerModal() {
+    setIsWinnerOpen((prevValue) => {
+      return !prevValue;
+    });
+  }
 
   // NAME
   const [inputValue, setInputValue] = useState("");
@@ -71,8 +78,21 @@ function App() {
     });
   }
 
-  function countStars() {
-    setEarnedStars((prevValue) => [...prevValue, prevValue.length + 1]);
+  const [flippedCards, setFlippedCards] = useState(0);
+  useEffect(() => {
+    if (flippedCards === 6) {
+      console.log("Winner");
+    }
+  }, [flippedCards]);
+  function countStars(event) {
+    if (event.target.classList.contains("flipped")) {
+      console.log("flippad, do nothing");
+    } else {
+      setEarnedStars((prevValue) => [...prevValue, prevValue.length + 1]);
+      event.target.classList.add("flipped");
+      setFlippedCards((prevValue) => prevValue + 1);
+      console.log(flippedCards);
+    }
   }
 
   return (
@@ -128,7 +148,12 @@ function App() {
         onChange={handleInputValue}
         handleName={handleName}
       />
-      <Winner name={name} star={earnedStars.length} />
+      <Winner
+        name={name}
+        star={earnedStars.length}
+        style={{ display: isWinnerOpen ? "block" : "none" }}
+        onClick={handleWinnerModal}
+      />
     </div>
   );
 }

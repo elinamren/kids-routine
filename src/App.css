@@ -104,6 +104,7 @@ button {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 10px;
+  pointer-events: none;
 }
 
 .card-back {
@@ -111,7 +112,7 @@ button {
   -webkit-transform: rotateY(180deg);
 }
 
-.card:hover .card-inner {
+.flipped {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
 }
