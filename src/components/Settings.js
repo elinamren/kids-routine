@@ -7,9 +7,9 @@ const Settings = (props) => {
       <label htmlFor="name">Namn: </label>
       <input type="text" name="name" onChange={props.onChange} />
       <br />
-      <button className="hej settings" onClick={props.onClick}>
-        Tillbaka
-      </button>
+      <p>Nollställ insamlade stjärnor</p>
+      <button onClick={props.deleteStars}>Ok</button>
+      <button onClick={props.onClick}>Tillbaka</button>
       <button onClick={props.handleName}>Spara</button>
     </div>
   );

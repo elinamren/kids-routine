@@ -157,8 +157,8 @@ button {
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.495);
   background-color: white;
   position: absolute;
-  width: 1050px;
-  height: 660px;
+  width: 70vw;
+  height: 75vh;
   top: 130px;
   left: 50%;
   transform: translateX(-50%);
@@ -202,4 +202,66 @@ input {
 
 label {
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1310px) {
+  .App {
+    padding: 20px 58px;
+  }
+  .cards-container {
+    margin: 0;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  .container {
+    top: 100px;
+    height: 84vh;
+    width: 97vw;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .App {
+    padding: 70px 20px 10px;
+    height: auto;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  p,
+  h4 {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1.25rem;
+  }
+  .container {
+    top: 70px;
+    height: auto;
+    width: 97vw;
+  }
+  #info-button {
+    top: 10px;
+    left: 43%;
+  }
+
+  #settings-button {
+    top: 10px;
+    right: 20px;
+    bottom: auto;
+  }
+
+  #star-button {
+    top: 10px;
+    left: 20px;
+    bottom: auto;
+  }
+  .icon-button img {
+    height: 50px;
+    width: 50px;
+  }
 }

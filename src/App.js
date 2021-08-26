@@ -96,6 +96,10 @@ function App() {
     }
   }
 
+  function deleteStars() {
+    setEarnedStars([]);
+  }
+
   return (
     <div className="App">
       <Header name={name} />
@@ -139,7 +143,7 @@ function App() {
             style={{
               position: "absolute",
               top: getRandom(290),
-              left: getRandom(925),
+              left: getRandom(870),
             }}
           />
         ))}
@@ -149,6 +153,7 @@ function App() {
         style={{ display: isSettingsOpen ? "block" : "none" }}
         onChange={handleInputValue}
         handleName={handleName}
+        deleteStars={deleteStars}
       />
       <Winner
         name={name}
