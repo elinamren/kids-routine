@@ -1,18 +1,79 @@
+import morningCards from "./morningCards";
+import { useState } from "react";
+
 const Settings = (props) => {
+  const [checkedCheckboxes, setCheckedCheckboxes] = useState([]);
+
+  function handleCheckbox(event) {
+    if (event.target.checked) {
+      checkedCheckboxes.push(event.target.value);
+    } else if (!event.target.checked) {
+      const newCardsArray = checkedCheckboxes.splice(
+        checkedCheckboxes.indexOf(event.target.value),
+        1
+      );
+      setCheckedCheckboxes(newCardsArray);
+    }
+    console.log(checkedCheckboxes);
+  }
+
+  const [newMorningCards, setNewMorningCards] = useState([]);
+  function handleNewCards() {
+    const newMorningTasks = morningCards.filter((card) =>
+      checkedCheckboxes.includes(card.title)
+    );
+    setNewMorningCards(newMorningTasks);
+    console.log(newMorningCards);
+  }
+
   return (
-    <div className="container" style={props.style}>
+    <div className="container settings" style={props.style}>
       <h2>Inställningar</h2>
       <p>Här kan du ändra namn, vilka uppgifter som ska synas osv.</p>
       <br />
       <label htmlFor="name">Namn: </label>
       <input type="text" name="name" onChange={props.onChange} />
       <br />
+      <br />
       <h4>Byt morgonuppgifter</h4>
-      <input type="checkbox" name="toilet" id="" />
-      <label htmlFor="toilet">Gå på toaletten</label>
 
+      {morningCards.map((card) => {
+        return (
+          <div key={card.id}>
+            <input
+              type="checkbox"
+              name={card.title}
+              onClick={handleCheckbox}
+              value={card.title}
+            />
+            <label htmlFor={card.title}>{card.title}</label>
+          </div>
+        );
+      })}
+
+      <button onClick={handleNewCards}>spara</button>
+      <br />
+      {newMorningCards.map((card) => {
+        return (
+          <div
+            style={{
+              display: "inline-block",
+              border: "20px solid rgb(210, 210, 210)",
+              borderRadius: "20px",
+              padding: "20px",
+              margin: "10px",
+            }}
+          >
+            <img src={card.image} alt={card.title} width="150" height="150" />
+            <h3>{card.title}</h3>
+          </div>
+        );
+      })}
+      <br />
       <p>Nollställ insamlade stjärnor</p>
       <button onClick={props.deleteStars}>Ok</button>
+      <br />
+      <br />
       <button onClick={props.handleSettingsModal}>Tillbaka</button>
       <button onClick={props.handleName}>Spara</button>
     </div>

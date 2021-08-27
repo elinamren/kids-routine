@@ -204,6 +204,10 @@ label {
   font-size: 1.5rem;
 }
 
+.settings {
+  overflow: scroll;
+}
+
 @media screen and (max-width: 1310px) {
   .App {
     padding: 20px 58px;
