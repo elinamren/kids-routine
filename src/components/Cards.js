@@ -1,3 +1,4 @@
+import Card from "./Card.js";
 import cardsMorning from "./cards-morning.js";
 
 const Cards = (props) => {
@@ -5,18 +6,13 @@ const Cards = (props) => {
     <div className="cards-container">
       {cardsMorning.map((card) => {
         return (
-          <div key={card.id} className="card" onClick={props.onClick}>
-            <div className="card-inner">
-              <div className="card-front">
-                <img src={card.image} alt={card.title} className="icon" />
-                <h3>{card.title}</h3>
-              </div>
-              <div className="card-back">
-                <img src="/images/star.png" alt="star" className="icon" />
-                <h3>Bra!</h3>
-              </div>
-            </div>
-          </div>
+          <Card
+            onClick={props.onClick}
+            key={card.id}
+            alt={card.title}
+            src={card.image}
+            title={card.title}
+          />
         );
       })}
     </div>

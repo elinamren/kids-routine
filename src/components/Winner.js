@@ -27,7 +27,7 @@ const Winner = (props) => {
         Du Har hittils samlat ihop {props.star} stjärnor. Du har klarat alla
         uppgifter som finns just nu. Kom tillbaka igen i {theme}.
       </p>
-      <button onClick={props.onClick}>TEST MODE</button>
+      <button onClick={props.handleWinnerModal}>TEST MODE</button>
     </div>
   );
 };

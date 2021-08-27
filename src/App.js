@@ -9,10 +9,6 @@ import Settings from "./components/Settings";
 import Winner from "./components/Winner";
 
 function App() {
-  function getRandom(number) {
-    return Math.floor(Math.random() * number + 1);
-  }
-
   const [earnedStars, setEarnedStars] = useState([]);
 
   const [isInfoOpen, setIsInfoOpen] = useState(false);
@@ -100,6 +96,10 @@ function App() {
     setEarnedStars([]);
   }
 
+  function getRandomPosition(number) {
+    return Math.floor(Math.random() * number + 1);
+  }
+
   return (
     <div className="App">
       <Header name={name} />
@@ -142,14 +142,14 @@ function App() {
             key={star}
             style={{
               position: "absolute",
-              top: getRandom(290),
-              left: getRandom(870),
+              top: getRandomPosition(290),
+              left: getRandomPosition(870),
             }}
           />
         ))}
       />
       <Settings
-        onClick={handleSettingsModal}
+        handleSettingsModal={handleSettingsModal}
         style={{ display: isSettingsOpen ? "block" : "none" }}
         onChange={handleInputValue}
         handleName={handleName}
@@ -159,7 +159,7 @@ function App() {
         name={name}
         star={earnedStars.length}
         style={{ display: isWinnerOpen ? "block" : "none" }}
-        onClick={handleWinnerModal}
+        handleWinnerModal={handleWinnerModal}
       />
     </div>
   );
