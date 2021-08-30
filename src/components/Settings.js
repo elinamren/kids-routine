@@ -25,7 +25,6 @@ const Settings = (props) => {
         );
       })}
 
-      <button onClick={props.handleNewCards}>spara</button>
       <br />
       <br />
       <p>Nollställ insamlade stjärnor</p>
@@ -33,7 +32,7 @@ const Settings = (props) => {
       <br />
       <br />
       <button onClick={props.handleSettingsModal}>Tillbaka</button>
-      <button onClick={props.handleName}>Spara</button>
+      <button onClick={props.handleSave}>Spara</button>
     </div>
   );
 };

@@ -129,6 +129,11 @@ function App() {
 
   // -------------------
 
+  function handleSave() {
+    handleName();
+    handleNewCards();
+  }
+
   return (
     <div className="App">
       <Header name={name} />
@@ -181,9 +186,8 @@ function App() {
         handleSettingsModal={handleSettingsModal}
         style={{ display: isSettingsOpen ? "block" : "none" }}
         onChange={handleInputValue}
-        handleName={handleName}
+        handleSave={handleSave}
         deleteStars={deleteStars}
-        handleNewCards={handleNewCards}
         handleCheckbox={handleCheckbox}
       />
       <Winner
