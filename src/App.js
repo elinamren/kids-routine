@@ -132,10 +132,14 @@ function App() {
 
   const [newMorningCards, setNewMorningCards] = useState([]);
   function handleNewCards() {
-    const newMorningTasks = morningCards.filter((card) =>
-      checkedCheckboxes.includes(card.title)
-    );
-    setNewMorningCards(newMorningTasks);
+    if (checkedCheckboxes.length > 6 || checkedCheckboxes.length < 6) {
+      alert("Du får välja 6 olika uppgifter");
+    } else if (checkedCheckboxes.length === 6) {
+      const newMorningTasks = morningCards.filter((card) =>
+        checkedCheckboxes.includes(card.title)
+      );
+      setNewMorningCards(newMorningTasks);
+    }
     console.log(newMorningCards);
   }
 
