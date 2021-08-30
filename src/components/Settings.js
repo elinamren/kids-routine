@@ -27,22 +27,6 @@ const Settings = (props) => {
 
       <button onClick={props.handleNewCards}>spara</button>
       <br />
-      {/* {newMorningCards.map((card) => {
-        return (
-          <div
-            style={{
-              display: "inline-block",
-              border: "20px solid rgb(210, 210, 210)",
-              borderRadius: "20px",
-              padding: "20px",
-              margin: "10px",
-            }}
-          >
-            <img src={card.image} alt={card.title} width="150" height="150" />
-            <h3>{card.title}</h3>
-          </div>
-        );
-      })} */}
       <br />
       <p>Nollställ insamlade stjärnor</p>
       <button onClick={props.deleteStars}>Ok</button>

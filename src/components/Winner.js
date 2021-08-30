@@ -18,11 +18,11 @@ const Winner = (props) => {
     <div className="container" style={props.style}>
       <h2>{props.name}, bra jobbat!</h2>
       <StarIcon />
+      <StarIcon style={{ animationDelay: "0.2s" }} />
+      <StarIcon style={{ animationDelay: "1.4s" }} />
       <StarIcon />
-      <StarIcon />
-      <StarIcon />
-      <StarIcon />
-      <StarIcon />
+      <StarIcon style={{ animationDelay: "0.5s" }} />
+      <StarIcon style={{ animationDelay: "1s" }} />
       <p>
         Du Har hittils samlat ihop {props.star} stjärnor. Du har klarat alla
         uppgifter som finns just nu. Kom tillbaka igen i {theme}.

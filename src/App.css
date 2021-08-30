@@ -179,6 +179,7 @@ button {
 .star-blink {
   transform: scale(1);
   animation: pulse 2s infinite;
+  margin: 5px;
 }
 
 @keyframes pulse {
