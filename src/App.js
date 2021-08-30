@@ -13,8 +13,7 @@ import { useMediaQuery } from "react-responsive";
 function App() {
   const isMobile = useMediaQuery({ query: "(max-width: 650px)" });
 
-  const [earnedStars, setEarnedStars] = useState([]);
-
+  // MODALS
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const [isStarOpen, setIsStarOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -25,42 +24,6 @@ function App() {
       return !prevValue;
     });
   }
-
-  // NAME
-  const [inputValue, setInputValue] = useState("");
-  const [name, setName] = useState("");
-
-  function handleInputValue(event) {
-    setInputValue(event.target.value);
-  }
-
-  function handleName() {
-    setName(inputValue);
-  }
-
-  // --------------------
-
-  // Function that can work for all classes, need to figure out the id thing though
-  // const [isOpen, setIsOpen] = useState({
-  //   info: false,
-  //   star: false,
-  //   settings: false,
-  // });
-
-  // function handleModal(event) {
-  //   const classes = event.target.className;
-  //   const words = classes.split(" ");
-  //   const id = words[1];
-
-  //   setIsOpen((prevValue) => {
-  //     return {
-  //       ...prevValue,
-  //       [id]: !prevValue[id],
-  //     };
-  //   });
-  // }
-
-  //--------------------------------------
 
   function handleInfoModal() {
     setIsInfoOpen((prevValue) => {
@@ -79,7 +42,22 @@ function App() {
     });
   }
 
+  // NAME
+  const [inputValue, setInputValue] = useState("");
+  const [name, setName] = useState("");
+
+  function handleInputValue(event) {
+    setInputValue(event.target.value);
+  }
+
+  function handleName() {
+    setName(inputValue);
+  }
+
+  // FLIP CARDS & COUNT STARS
   const [flippedCards, setFlippedCards] = useState(0);
+  const [earnedStars, setEarnedStars] = useState([]);
+
   useEffect(() => {
     if (flippedCards === 6) {
       console.log("Winner");
@@ -87,9 +65,7 @@ function App() {
     }
   }, [flippedCards]);
   function countStars(event) {
-    if (event.target.classList.contains("flipped")) {
-      console.log("flippad, do nothing");
-    } else {
+    if (!event.target.classList.contains("flipped")) {
       setEarnedStars((prevValue) => [...prevValue, prevValue.length + 1]);
       event.target.classList.add("flipped");
       setFlippedCards((prevValue) => prevValue + 1);
@@ -97,6 +73,7 @@ function App() {
     }
   }
 
+  // DELETE ALL STARS
   function deleteStars() {
     setEarnedStars([]);
   }
