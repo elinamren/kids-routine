@@ -250,7 +250,7 @@ label {
   }
   .container {
     top: 70px;
-    height: auto;
+    height: 89vh;
     width: 97vw;
   }
   #info-button {
@@ -272,5 +272,8 @@ label {
   .icon-button img {
     height: 50px;
     width: 50px;
+  }
+  .star-board {
+    height: 66%;
   }
 }

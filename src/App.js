@@ -8,8 +8,11 @@ import Star from "./components/Star";
 import Settings from "./components/Settings";
 import Winner from "./components/Winner";
 import morningCards from "./components/morningCards";
+import { useMediaQuery } from "react-responsive";
 
 function App() {
+  const isMobile = useMediaQuery({ query: "(max-width: 650px)" });
+
   const [earnedStars, setEarnedStars] = useState([]);
 
   const [isInfoOpen, setIsInfoOpen] = useState(false);
@@ -191,8 +194,8 @@ function App() {
             key={star}
             style={{
               position: "absolute",
-              top: getRandomNumber(290),
-              left: getRandomNumber(870),
+              top: isMobile ? getRandomNumber(290) : getRandomNumber(290),
+              left: isMobile ? getRandomNumber(230) : getRandomNumber(870),
               animationDelay: getRandomNumber(5) + "s",
             }}
           />
