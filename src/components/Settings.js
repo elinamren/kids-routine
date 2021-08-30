@@ -19,8 +19,12 @@ const Settings = (props) => {
 
         <br />
         <br />
-        <p>Nollställ insamlade stjärnor</p>
-        <button onClick={props.deleteStars}>Ok</button>
+        <p>
+          Du har {props.stars} insamlade stjärnor. Vill du börja om från noll?
+        </p>
+        <button className="small-button" onClick={props.deleteStars}>
+          Ja
+        </button>
       </div>
 
       <button onClick={props.handleSettingsModal}>Tillbaka</button>

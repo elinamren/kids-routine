@@ -237,6 +237,7 @@ function App() {
         deleteStars={deleteStars}
         handleCheckbox={handleCheckbox}
         value={name}
+        stars={earnedStars.length}
       />
       <Winner
         name={name}
