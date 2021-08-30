@@ -21,7 +21,7 @@ const Card = (props) => {
           <h3>{props.title}</h3>
         </div>
         <div className="card-back">
-          <img src="/images/star.png" alt="star" className="icon" />
+          <img src="images/star.png" alt="star" className="icon" />
           <h3>{randomWord}</h3>
         </div>
       </div>

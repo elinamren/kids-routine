@@ -215,7 +215,7 @@ function App() {
         starDisplay={earnedStars.map((star) => (
           <img
             className="star-blink"
-            src="/images/star.png"
+            src="images/star.png"
             alt="star"
             width="50"
             height="50"
