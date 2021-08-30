@@ -115,7 +115,6 @@ function App() {
         alt="settings"
         id="settings-button"
         onClick={handleSettingsModal}
-        className="settings"
       />
       <IconButton
         src="images/star.png"

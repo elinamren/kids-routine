@@ -8,7 +8,7 @@ const Cards = (props) => {
         return (
           <Card
             onClick={props.onClick}
-            id={card.id}
+            key={card.id}
             alt={card.title}
             src={card.image}
             title={card.title}
