@@ -103,7 +103,6 @@ button {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 10px;
   pointer-events: none;
 }
 
@@ -207,6 +206,11 @@ label {
 
 .settings {
   overflow: scroll;
+}
+
+.input-container {
+  text-align: left;
+  margin: 20px;
 }
 
 @media screen and (max-width: 1310px) {

@@ -70,6 +70,7 @@ function App() {
     });
   }
   function handleSettingsModal() {
+    setCheckedCheckboxes([]);
     setIsSettingsOpen((prevValue) => {
       return !prevValue;
     });
@@ -103,7 +104,18 @@ function App() {
 
   // Pick tasks  settings
 
-  const [checkedCheckboxes, setCheckedCheckboxes] = useState([]);
+  const [checkedCheckboxes, setCheckedCheckboxes] = useState([
+    "Gå på toa",
+    "Klä på dig",
+    "Ät frukost",
+    "Borsta tänder",
+    "Packa väskan",
+    "Klä på ytterkläder",
+  ]);
+
+  useEffect(() => {
+    handleNewCards();
+  }, []);
 
   function handleCheckbox(event) {
     if (event.target.checked) {
