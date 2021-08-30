@@ -1,31 +1,5 @@
 import morningCards from "./morningCards";
-import { useState } from "react";
-
 const Settings = (props) => {
-  const [checkedCheckboxes, setCheckedCheckboxes] = useState([]);
-
-  function handleCheckbox(event) {
-    if (event.target.checked) {
-      checkedCheckboxes.push(event.target.value);
-    } else if (!event.target.checked) {
-      const newCardsArray = checkedCheckboxes.splice(
-        checkedCheckboxes.indexOf(event.target.value),
-        1
-      );
-      setCheckedCheckboxes(newCardsArray);
-    }
-    console.log(checkedCheckboxes);
-  }
-
-  const [newMorningCards, setNewMorningCards] = useState([]);
-  function handleNewCards() {
-    const newMorningTasks = morningCards.filter((card) =>
-      checkedCheckboxes.includes(card.title)
-    );
-    setNewMorningCards(newMorningTasks);
-    console.log(newMorningCards);
-  }
-
   return (
     <div className="container settings" style={props.style}>
       <h2>Inställningar</h2>
@@ -43,7 +17,7 @@ const Settings = (props) => {
             <input
               type="checkbox"
               name={card.title}
-              onClick={handleCheckbox}
+              onClick={props.handleCheckbox}
               value={card.title}
             />
             <label htmlFor={card.title}>{card.title}</label>
@@ -51,9 +25,9 @@ const Settings = (props) => {
         );
       })}
 
-      <button onClick={handleNewCards}>spara</button>
+      <button onClick={props.handleNewCards}>spara</button>
       <br />
-      {newMorningCards.map((card) => {
+      {/* {newMorningCards.map((card) => {
         return (
           <div
             style={{
@@ -68,7 +42,7 @@ const Settings = (props) => {
             <h3>{card.title}</h3>
           </div>
         );
-      })}
+      })} */}
       <br />
       <p>Nollställ insamlade stjärnor</p>
       <button onClick={props.deleteStars}>Ok</button>

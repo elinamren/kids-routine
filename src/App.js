@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Star from "./components/Star";
 import Settings from "./components/Settings";
 import Winner from "./components/Winner";
+import morningCards from "./components/morningCards";
 
 function App() {
   const [earnedStars, setEarnedStars] = useState([]);
@@ -100,10 +101,38 @@ function App() {
     return Math.floor(Math.random() * number + 1);
   }
 
+  // Pick tasks  settings
+
+  const [checkedCheckboxes, setCheckedCheckboxes] = useState([]);
+
+  function handleCheckbox(event) {
+    if (event.target.checked) {
+      checkedCheckboxes.push(event.target.value);
+    } else if (!event.target.checked) {
+      const newCardsArray = checkedCheckboxes.splice(
+        checkedCheckboxes.indexOf(event.target.value),
+        1
+      );
+      setCheckedCheckboxes(newCardsArray);
+    }
+    console.log(checkedCheckboxes);
+  }
+
+  const [newMorningCards, setNewMorningCards] = useState([]);
+  function handleNewCards() {
+    const newMorningTasks = morningCards.filter((card) =>
+      checkedCheckboxes.includes(card.title)
+    );
+    setNewMorningCards(newMorningTasks);
+    console.log(newMorningCards);
+  }
+
+  // -------------------
+
   return (
     <div className="App">
       <Header name={name} />
-      <Cards onClick={countStars} />
+      <Cards onClick={countStars} newMorningCards={newMorningCards} />
       <IconButton
         src="images/info.png"
         alt="info"
@@ -153,6 +182,8 @@ function App() {
         onChange={handleInputValue}
         handleName={handleName}
         deleteStars={deleteStars}
+        handleNewCards={handleNewCards}
+        handleCheckbox={handleCheckbox}
       />
       <Winner
         name={name}
