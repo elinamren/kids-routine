@@ -2,6 +2,7 @@ import Checkbox from "./Checkbox";
 
 const SettingsMorningCards = (props) => {
   return (
+    // loopa igenom, om namnet finns  i listan checked
     <>
       <h4>Välj morgonuppgifter, 6st.</h4>
       <Checkbox name="Gå upp i tid" handleCheckbox={props.handleCheckbox} />

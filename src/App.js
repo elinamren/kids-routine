@@ -130,7 +130,7 @@ function App() {
     handleName();
     handleNewCards();
   }
-
+  //variabel KidsRoutineNameLocalStorage
   //SAVE TO LOCAL STORAGE
   const saveLocalItems = () => {
     localStorage.setItem("KidsRoutineNameLocalStorage", JSON.stringify(name));
