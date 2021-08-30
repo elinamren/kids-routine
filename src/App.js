@@ -97,7 +97,7 @@ function App() {
     setEarnedStars([]);
   }
 
-  function getRandomPosition(number) {
+  function getRandomNumber(number) {
     return Math.floor(Math.random() * number + 1);
   }
 
@@ -170,8 +170,9 @@ function App() {
             key={star}
             style={{
               position: "absolute",
-              top: getRandomPosition(290),
-              left: getRandomPosition(870),
+              top: getRandomNumber(290),
+              left: getRandomNumber(870),
+              animationDelay: getRandomNumber(5) + "s",
             }}
           />
         ))}
