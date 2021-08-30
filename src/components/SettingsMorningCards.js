@@ -3,7 +3,7 @@ import Checkbox from "./Checkbox";
 const SettingsMorningCards = (props) => {
   return (
     <>
-      <h4>Välj morgonuppgifter</h4>
+      <h4>Välj morgonuppgifter, 6st.</h4>
       <Checkbox name="Gå upp i tid" handleCheckbox={props.handleCheckbox} />
       <Checkbox name="Gå på toa" handleCheckbox={props.handleCheckbox} />
       <Checkbox name="Klä på dig" handleCheckbox={props.handleCheckbox} />

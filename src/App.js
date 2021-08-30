@@ -13,6 +13,11 @@ import { useMediaQuery } from "react-responsive";
 function App() {
   const isMobile = useMediaQuery({ query: "(max-width: 650px)" });
 
+  useEffect(() => {
+    handleNewCards();
+    getLocalKidsRoutine();
+  }, []);
+
   // MODALS
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const [isStarOpen, setIsStarOpen] = useState(false);
@@ -93,10 +98,6 @@ function App() {
     "Klä på ytterkläder",
   ]);
 
-  useEffect(() => {
-    handleNewCards();
-  }, []);
-
   function handleCheckbox(event) {
     if (event.target.checked) {
       checkedCheckboxes.push(event.target.value);
@@ -129,6 +130,56 @@ function App() {
     handleName();
     handleNewCards();
   }
+
+  //SAVE TO LOCAL STORAGE
+  const saveLocalItems = () => {
+    localStorage.setItem("KidsRoutineNameLocalStorage", JSON.stringify(name));
+    localStorage.setItem(
+      "KidsRoutineCardsLocalStorage",
+      JSON.stringify(newMorningCards)
+    );
+    localStorage.setItem(
+      "KidsRoutineStarsLocalStorage",
+      JSON.stringify(earnedStars)
+    );
+  };
+
+  const getLocalKidsRoutine = () => {
+    if (localStorage.getItem("KidsRoutineNameLocalStorage") === null) {
+      localStorage.setItem("KidsRoutineNameLocalStorage", JSON.stringify(""));
+    } else {
+      let NameFromLocal = JSON.parse(
+        localStorage.getItem("KidsRoutineNameLocalStorage")
+      );
+      setName(NameFromLocal);
+    }
+    if (localStorage.getItem("KidsRoutineStarsLocalStorage") === null) {
+      localStorage.setItem("KidsRoutineStarsLocalStorage", JSON.stringify([]));
+    } else {
+      let StarsFromLocal = JSON.parse(
+        localStorage.getItem("KidsRoutineStarsLocalStorage")
+      );
+      setEarnedStars(StarsFromLocal);
+    }
+    if (localStorage.getItem("KidsRoutineCardsLocalStorage") === null) {
+      const defaultCards = morningCards.filter((card) =>
+        checkedCheckboxes.includes(card.title)
+      );
+      localStorage.setItem(
+        "KidsRoutineCardsLocalStorage",
+        JSON.stringify(defaultCards)
+      );
+    } else {
+      let CardsFromLocal = JSON.parse(
+        localStorage.getItem("KidsRoutineCardsLocalStorage")
+      );
+      setNewMorningCards(CardsFromLocal);
+    }
+  };
+
+  useEffect(() => {
+    saveLocalItems();
+  }, [name, earnedStars, newMorningCards]);
 
   return (
     <div className="App">
@@ -185,6 +236,7 @@ function App() {
         handleSave={handleSave}
         deleteStars={deleteStars}
         handleCheckbox={handleCheckbox}
+        value={name}
       />
       <Winner
         name={name}

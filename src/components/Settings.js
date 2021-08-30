@@ -7,7 +7,12 @@ const Settings = (props) => {
       <div className="input-container">
         <br />
         <label htmlFor="name">Namn: </label>
-        <input type="text" name="name" onChange={props.onChange} />
+        <input
+          type="text"
+          name="name"
+          onChange={props.onChange}
+          // value={props.value}
+        />
         <br />
         <br />
         <SettingsMorningCards handleCheckbox={props.handleCheckbox} />
