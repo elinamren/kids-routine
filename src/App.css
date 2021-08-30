@@ -78,7 +78,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 20px;
+  margin: 20px auto;
   max-width: 1000px;
 }
 
