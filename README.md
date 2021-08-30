@@ -2,7 +2,7 @@
 
 ## About
 
-Finish your tasks during the day in a fin way earning stars.  
+Finish your tasks during the day in a fun way earning stars.  
 This is my individual school project at Hyper Island. A 8 weeks long developing process.
 
 ### Demo
