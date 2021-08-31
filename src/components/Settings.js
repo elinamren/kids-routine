@@ -15,7 +15,10 @@ const Settings = (props) => {
         />
         <br />
         <br />
-        <SettingsMorningCards handleCheckbox={props.handleCheckbox} />
+        <SettingsMorningCards
+          handleCheckbox={props.handleCheckbox}
+          checkedCheckboxes={props.checkedCheckboxes}
+        />
 
         <br />
         <br />

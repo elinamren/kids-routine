@@ -16,6 +16,7 @@ function App() {
   useEffect(() => {
     handleNewCards();
     getLocalKidsRoutine();
+    // eslint-disable-next-line
   }, []);
 
   // MODALS
@@ -165,6 +166,7 @@ function App() {
 
   useEffect(() => {
     saveLocalItems();
+    // eslint-disable-next-line
   }, [name, earnedStars, newMorningCards]);
 
   return (
@@ -224,7 +226,7 @@ function App() {
         handleCheckbox={handleCheckbox}
         value={name}
         stars={earnedStars.length}
-        setCheckedCheckboxes={checkedCheckboxes}
+        checkedCheckboxes={checkedCheckboxes}
       />
       <Winner
         name={name}

@@ -1,6 +1,5 @@
 import Checkbox from "./Checkbox";
 import morningCards from "./morningCards";
-import { useState } from "react";
 
 const SettingsMorningCards = (props) => {
   // const [isChecked, setIsChecked] = useState(false);
@@ -18,6 +17,7 @@ const SettingsMorningCards = (props) => {
             handleCheckbox={props.handleCheckbox}
             key={card.id}
             id={card.id}
+            // checked={props.checkedCheckboxes.includes(card.id) ? true : false}
           />
         );
       })}
