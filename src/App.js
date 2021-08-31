@@ -128,6 +128,9 @@ function App() {
   function handleSave() {
     handleName();
     handleNewCards();
+    if (checkedCheckboxes.length === 6) {
+      setIsSettingsOpen(false);
+    }
   }
   // -------------------
 
