@@ -13,7 +13,11 @@ const SettingsMorningCards = (props) => {
       <h4>Välj morgonuppgifter, 6st.</h4>
       {morningCards.map((card) => {
         return (
-          <Checkbox name={card.title} handleCheckbox={props.handleCheckbox} />
+          <Checkbox
+            name={card.title}
+            handleCheckbox={props.handleCheckbox}
+            key={card.id}
+          />
         );
       })}
     </>

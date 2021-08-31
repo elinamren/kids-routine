@@ -66,7 +66,9 @@ function App() {
   useEffect(() => {
     if (flippedCards === 6) {
       console.log("Winner");
-      setIsWinnerOpen(true);
+      setTimeout(() => {
+        setIsWinnerOpen(true);
+      }, 1700);
     }
   }, [flippedCards]);
   function countStars(event) {
@@ -206,11 +208,12 @@ function App() {
       />
       <Info
         onClick={handleInfoModal}
-        style={{ display: isInfoOpen ? "block" : "none" }}
+        // style={{ display: isInfoOpen ? "block" : "none" }}
+        className={isInfoOpen ? "fade-in" : "fade-out"}
       />
       <Star
         onClick={handleStarsModal}
-        style={{ display: isStarOpen ? "block" : "none" }}
+        className={isStarOpen ? "fade-in" : "fade-out"}
         name={name}
         star={earnedStars.length}
         starDisplay={earnedStars.map((star) => (
@@ -232,7 +235,7 @@ function App() {
       />
       <Settings
         handleSettingsModal={handleSettingsModal}
-        style={{ display: isSettingsOpen ? "block" : "none" }}
+        className={isSettingsOpen ? "fade-in" : "fade-out"}
         onChange={handleInputValue}
         handleSave={handleSave}
         deleteStars={deleteStars}
@@ -244,8 +247,8 @@ function App() {
       <Winner
         name={name}
         star={earnedStars.length}
-        style={{ display: isWinnerOpen ? "block" : "none" }}
         handleWinnerModal={handleWinnerModal}
+        className={isWinnerOpen ? "fade-in" : "fade-out"}
       />
     </div>
   );

@@ -1,6 +1,6 @@
 const Star = (props) => {
   return (
-    <div className="container" style={props.style}>
+    <div className={`container ${props.className}`}>
       <h2>Stjärnor</h2>
       <p>
         Bra jobbat {props.name}, du har samlat {props.star} stjärnor.

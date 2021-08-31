@@ -15,7 +15,7 @@ const Winner = (props) => {
   }, [hour]);
 
   return (
-    <div className="container" style={props.style}>
+    <div className={`container ${props.className}`}>
       <h2>Bra jobbat {props.name}!</h2>
       <StarIcon />
       <StarIcon style={{ animationDelay: "0.2s" }} />

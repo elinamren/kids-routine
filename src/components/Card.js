@@ -11,6 +11,7 @@ const Card = (props) => {
   ];
 
   const number = Math.floor(Math.random() * superlativ.length);
+
   const randomWord = superlativ[number];
 
   return (

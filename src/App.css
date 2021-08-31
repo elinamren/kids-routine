@@ -179,6 +179,16 @@ button {
   padding: 30px 20px;
 }
 
+.fade-out {
+  opacity: 0;
+  transition: width 0.5s, height 0.5s, opacity 0.5s;
+  pointer-events: none;
+}
+.fade-in {
+  opacity: 1;
+  transition: width 0.5s, height 0.5s, opacity 0.5s;
+}
+
 .info p {
   font-size: 30px;
 }

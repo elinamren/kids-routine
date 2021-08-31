@@ -1,7 +1,7 @@
 import SettingsMorningCards from "./SettingsMorningCards";
 const Settings = (props) => {
   return (
-    <div className="container settings" style={props.style}>
+    <div className={`container settings ${props.className}`}>
       <h2>Inställningar</h2>
       <p>Här kan du ändra namn, vilka uppgifter som ska synas osv.</p>
       <div className="input-container">
