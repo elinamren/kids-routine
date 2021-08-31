@@ -89,20 +89,20 @@ function App() {
 
   // Pick tasks  settings
   const [checkedCheckboxes, setCheckedCheckboxes] = useState([
-    "Gå på toa",
-    "Klä på dig",
-    "Ät frukost",
-    "Borsta tänder",
-    "Packa väskan",
-    "Klä på ytterkläder",
+    "2",
+    "3",
+    "4",
+    "6",
+    "9",
+    "10",
   ]);
 
   function handleCheckbox(event) {
     if (event.target.checked) {
-      checkedCheckboxes.push(event.target.value);
+      checkedCheckboxes.push(event.target.id);
     } else if (!event.target.checked) {
       const newCardsArray = checkedCheckboxes.splice(
-        checkedCheckboxes.indexOf(event.target.value),
+        checkedCheckboxes.indexOf(event.target.id),
         1
       );
       setCheckedCheckboxes(newCardsArray);
@@ -117,7 +117,7 @@ function App() {
       alert("Du får välja 6 olika uppgifter");
     } else if (checkedCheckboxes.length === 6) {
       const newMorningTasks = morningCards.filter((card) =>
-        checkedCheckboxes.includes(card.title)
+        checkedCheckboxes.includes(card.id)
       );
       setNewMorningCards(newMorningTasks);
     }
@@ -156,10 +156,7 @@ function App() {
       setEarnedStars(StarsFromLocal);
     }
     if (localStorage.getItem(cardsStorage) === null) {
-      const defaultCards = morningCards.filter((card) =>
-        checkedCheckboxes.includes(card.title)
-      );
-      localStorage.setItem(cardsStorage, JSON.stringify(defaultCards));
+      localStorage.setItem(cardsStorage, JSON.stringify(newMorningCards));
     } else {
       let CardsFromLocal = JSON.parse(localStorage.getItem(cardsStorage));
       setNewMorningCards(CardsFromLocal);
