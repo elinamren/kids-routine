@@ -53,7 +53,7 @@ function App() {
   const [isMorning, setIsMorning] = useState(false);
 
   useEffect(() => {
-    if (hour > 15) {
+    if (hour < 15) {
       setIsMorning(true);
     } else {
       setIsMorning(false);
@@ -186,7 +186,14 @@ function App() {
   }, [name, earnedStars, newMorningCards]);
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        backgroundImage: isMorning
+          ? "linear-gradient(rgb(255, 209, 216) 50%, rgb(255, 204, 110))"
+          : "linear-gradient(rgb(13, 12, 79) 50%, rgb(81, 145, 219))",
+      }}
+    >
       <Header name={name} isMorning={isMorning} />
       <Cards onClick={countStars} newMorningCards={newMorningCards} />
       <IconButton
