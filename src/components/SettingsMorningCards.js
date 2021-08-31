@@ -1,23 +1,21 @@
 import Checkbox from "./Checkbox";
+import morningCards from "./morningCards";
+import { useState } from "react";
 
 const SettingsMorningCards = (props) => {
+  // const [isChecked, setIsChecked] = useState(false);
+  // if (props.checkedCheckboxes.includes(card.title)) {
+  //   setIsChecked(true);
+  // }
   return (
     // loopa igenom, om namnet finns  i listan checked
     <>
       <h4>Välj morgonuppgifter, 6st.</h4>
-      <Checkbox name="Gå upp i tid" handleCheckbox={props.handleCheckbox} />
-      <Checkbox name="Gå på toa" handleCheckbox={props.handleCheckbox} />
-      <Checkbox name="Klä på dig" handleCheckbox={props.handleCheckbox} />
-      <Checkbox name="Ät frukost" handleCheckbox={props.handleCheckbox} />
-      <Checkbox name="Duka av bordet" handleCheckbox={props.handleCheckbox} />
-      <Checkbox name="Borsta tänder" handleCheckbox={props.handleCheckbox} />
-      <Checkbox name="Borsta håret" handleCheckbox={props.handleCheckbox} />
-      <Checkbox name="Bädda sängen" handleCheckbox={props.handleCheckbox} />
-      <Checkbox name="Packa väskan" handleCheckbox={props.handleCheckbox} />
-      <Checkbox
-        name="Klä på ytterkläder"
-        handleCheckbox={props.handleCheckbox}
-      />
+      {morningCards.map((card) => {
+        return (
+          <Checkbox name={card.title} handleCheckbox={props.handleCheckbox} />
+        );
+      })}
     </>
   );
 };

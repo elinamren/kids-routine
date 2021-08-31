@@ -112,6 +112,7 @@ function App() {
   }
 
   const [newMorningCards, setNewMorningCards] = useState([]);
+
   function handleNewCards() {
     if (checkedCheckboxes.length > 6 || checkedCheckboxes.length < 6) {
       alert("Du får välja 6 olika uppgifter");
@@ -238,6 +239,7 @@ function App() {
         handleCheckbox={handleCheckbox}
         value={name}
         stars={earnedStars.length}
+        setCheckedCheckboxes={checkedCheckboxes}
       />
       <Winner
         name={name}
