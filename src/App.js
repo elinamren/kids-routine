@@ -127,55 +127,44 @@ function App() {
     console.log(newMorningCards);
   }
 
-  // -------------------
-
   function handleSave() {
     handleName();
     handleNewCards();
   }
-  //variabel KidsRoutineNameLocalStorage
+  // -------------------
+
   //SAVE TO LOCAL STORAGE
+
+  const nameStorage = "KidsRoutineNameLocalStorage";
+  const cardsStorage = "KidsRoutineCardsLocalStorage";
+  const starsStorage = "KidsRoutineStarsLocalStorage";
+
   const saveLocalItems = () => {
-    localStorage.setItem("KidsRoutineNameLocalStorage", JSON.stringify(name));
-    localStorage.setItem(
-      "KidsRoutineCardsLocalStorage",
-      JSON.stringify(newMorningCards)
-    );
-    localStorage.setItem(
-      "KidsRoutineStarsLocalStorage",
-      JSON.stringify(earnedStars)
-    );
+    localStorage.setItem(nameStorage, JSON.stringify(name));
+    localStorage.setItem(cardsStorage, JSON.stringify(newMorningCards));
+    localStorage.setItem(starsStorage, JSON.stringify(earnedStars));
   };
 
   const getLocalKidsRoutine = () => {
-    if (localStorage.getItem("KidsRoutineNameLocalStorage") === null) {
-      localStorage.setItem("KidsRoutineNameLocalStorage", JSON.stringify(""));
+    if (localStorage.getItem(nameStorage) === null) {
+      localStorage.setItem(nameStorage, JSON.stringify(""));
     } else {
-      let NameFromLocal = JSON.parse(
-        localStorage.getItem("KidsRoutineNameLocalStorage")
-      );
+      let NameFromLocal = JSON.parse(localStorage.getItem(nameStorage));
       setName(NameFromLocal);
     }
-    if (localStorage.getItem("KidsRoutineStarsLocalStorage") === null) {
-      localStorage.setItem("KidsRoutineStarsLocalStorage", JSON.stringify([]));
+    if (localStorage.getItem(starsStorage) === null) {
+      localStorage.setItem(starsStorage, JSON.stringify([]));
     } else {
-      let StarsFromLocal = JSON.parse(
-        localStorage.getItem("KidsRoutineStarsLocalStorage")
-      );
+      let StarsFromLocal = JSON.parse(localStorage.getItem(starsStorage));
       setEarnedStars(StarsFromLocal);
     }
-    if (localStorage.getItem("KidsRoutineCardsLocalStorage") === null) {
+    if (localStorage.getItem(cardsStorage) === null) {
       const defaultCards = morningCards.filter((card) =>
         checkedCheckboxes.includes(card.title)
       );
-      localStorage.setItem(
-        "KidsRoutineCardsLocalStorage",
-        JSON.stringify(defaultCards)
-      );
+      localStorage.setItem(cardsStorage, JSON.stringify(defaultCards));
     } else {
-      let CardsFromLocal = JSON.parse(
-        localStorage.getItem("KidsRoutineCardsLocalStorage")
-      );
+      let CardsFromLocal = JSON.parse(localStorage.getItem(cardsStorage));
       setNewMorningCards(CardsFromLocal);
     }
   };
@@ -208,7 +197,6 @@ function App() {
       />
       <Info
         onClick={handleInfoModal}
-        // style={{ display: isInfoOpen ? "block" : "none" }}
         className={isInfoOpen ? "fade-in" : "fade-out"}
       />
       <Star
