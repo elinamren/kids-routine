@@ -29,7 +29,6 @@ function App() {
       return !prevValue;
     });
   }
-
   function handleInfoModal() {
     setIsInfoOpen((prevValue) => {
       return !prevValue;
@@ -54,7 +53,6 @@ function App() {
   function handleInputValue(event) {
     setInputValue(event.target.value);
   }
-
   function handleName() {
     setName(inputValue);
   }
@@ -90,7 +88,6 @@ function App() {
   }
 
   // Pick tasks  settings
-
   const [checkedCheckboxes, setCheckedCheckboxes] = useState([
     "Gå på toa",
     "Klä på dig",
