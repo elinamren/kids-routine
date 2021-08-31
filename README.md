@@ -7,7 +7,7 @@ This is my individual school project at Hyper Island. A 8 weeks long developing 
 
 ### Demo
 
-TBA
+https://elinamren.github.io/kids-routine/ (in progress)
 
 ### Goals & Reflection
 
