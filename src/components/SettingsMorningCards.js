@@ -17,6 +17,7 @@ const SettingsMorningCards = (props) => {
             name={card.title}
             handleCheckbox={props.handleCheckbox}
             key={card.id}
+            id={card.id}
           />
         );
       })}
