@@ -1,19 +1,6 @@
-import { useEffect, useState } from "react";
 import StarIcon from "./Star-icon";
 
 const Winner = (props) => {
-  const hour = new Date().getHours();
-
-  const [theme, setTheme] = useState("");
-
-  useEffect(() => {
-    if (hour > 12) {
-      setTheme("morgon");
-    } else {
-      setTheme("kväll");
-    }
-  }, [hour]);
-
   return (
     <div className={`container ${props.className}`}>
       <h2>Bra jobbat {props.name}!</h2>
@@ -25,7 +12,8 @@ const Winner = (props) => {
       <StarIcon style={{ animationDelay: "1s" }} />
       <p>
         Du Har hittils samlat ihop {props.star} stjärnor. Du har klarat alla
-        uppgifter som finns just nu. Kom tillbaka igen i {theme}.
+        uppgifter som finns just nu. Kom tillbaka igen i{" "}
+        {props.isMorning ? "kväll" : "morgon"}.
       </p>
       <button onClick={props.handleWinnerModal}>TEST MODE</button>
     </div>

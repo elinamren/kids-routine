@@ -47,6 +47,19 @@ function App() {
     });
   }
 
+  // THEME --- morning/night
+  const hour = new Date().getHours();
+
+  const [isMorning, setIsMorning] = useState(false);
+
+  useEffect(() => {
+    if (hour > 15) {
+      setIsMorning(true);
+    } else {
+      setIsMorning(false);
+    }
+  }, [hour]);
+
   // NAME
   const [inputValue, setInputValue] = useState("");
   const [name, setName] = useState("");
@@ -174,7 +187,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header name={name} />
+      <Header name={name} isMorning={isMorning} />
       <Cards onClick={countStars} newMorningCards={newMorningCards} />
       <IconButton
         src="images/info.png"
@@ -236,6 +249,7 @@ function App() {
         star={earnedStars.length}
         handleWinnerModal={handleWinnerModal}
         className={isWinnerOpen ? "fade-in" : "fade-out"}
+        isMorning={isMorning}
       />
     </div>
   );
