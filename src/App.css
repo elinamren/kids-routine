@@ -171,8 +171,8 @@ button {
   background-color: white;
   position: absolute;
   width: 70vw;
-  height: 75vh;
-  top: 130px;
+  height: 80vh;
+  top: 125px;
   left: 50%;
   transform: translateX(-50%);
   margin: auto;
@@ -284,8 +284,8 @@ label {
     font-size: 1.25rem;
   }
   .modal-container {
-    top: 70px;
-    height: 89vh;
+    top: 50px;
+    height: 92vh;
     width: 97vw;
   }
   #info-button {

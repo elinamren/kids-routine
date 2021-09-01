@@ -233,7 +233,7 @@ function App() {
             key={star}
             style={{
               position: "absolute",
-              top: isMobile ? getRandomNumber(290) : getRandomNumber(290),
+              top: isMobile ? getRandomNumber(300) : getRandomNumber(290),
               left: isMobile ? getRandomNumber(230) : getRandomNumber(870),
               animationDelay: getRandomNumber(5) + "s",
             }}
