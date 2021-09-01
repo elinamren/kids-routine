@@ -69,6 +69,7 @@ function App() {
   }
   function handleName() {
     setName(inputValue);
+    setInputValue("");
   }
 
   // FLIP CARDS & COUNT STARS
@@ -139,7 +140,6 @@ function App() {
   }
 
   function handleSave() {
-    handleName();
     handleNewCards();
     if (checkedCheckboxes.length === 6) {
       setIsSettingsOpen(false);
@@ -248,6 +248,7 @@ function App() {
         deleteStars={deleteStars}
         handleCheckbox={handleCheckbox}
         value={name}
+        saveName={handleName}
         stars={earnedStars.length}
         checkedCheckboxes={checkedCheckboxes}
       />

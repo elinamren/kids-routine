@@ -8,7 +8,7 @@ const Settings = (props) => {
       <h2>Inställningar</h2>
       <p>Här kan du ändra namn, vilka uppgifter som ska synas osv.</p>
       <div className="input-container">
-        <NameInput onChange={props.onChange} />
+        <NameInput onChange={props.onChange} saveName={props.saveName} />
         <SettingsMorningCards
           handleCheckbox={props.handleCheckbox}
           checkedCheckboxes={props.checkedCheckboxes}

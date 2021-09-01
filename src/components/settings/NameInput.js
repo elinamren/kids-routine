@@ -7,7 +7,7 @@ const NameInput = (props) => {
           type="text"
           name="name"
           onChange={props.onChange}
-          // value={props.value}
+          value={props.value}
         />
       </div>
       <button className="small-button" onClick={props.saveName}>
