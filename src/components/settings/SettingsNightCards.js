@@ -3,7 +3,7 @@ import nightCards from "../nightCards";
 
 const SettingsNightCards = (props) => {
   return (
-    <div className="card-settings-container">
+    <div className="settings-container">
       <h4>Välj kvällsuppgifter, 6st.</h4>
       {nightCards.map((card) => {
         return (

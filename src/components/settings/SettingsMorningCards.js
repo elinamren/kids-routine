@@ -8,7 +8,7 @@ const SettingsMorningCards = (props) => {
   // }
   return (
     // loopa igenom, om namnet finns  i listan checked
-    <div className="card-settings-container">
+    <div className="settings-container">
       <h4>Välj morgonuppgifter, 6st.</h4>
       {morningCards.map((card) => {
         return (

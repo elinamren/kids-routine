@@ -1,34 +1,20 @@
 import SettingsNightCards from "./SettingsNightCards";
 import SettingsMorningCards from "./SettingsMorningCards";
+import NameInput from "./NameInput";
+import DeleteStars from "./DeleteStars";
 const Settings = (props) => {
   return (
     <div className={`modal-container settings ${props.className}`}>
       <h2>Inställningar</h2>
       <p>Här kan du ändra namn, vilka uppgifter som ska synas osv.</p>
       <div className="input-container">
-        <br />
-        <label htmlFor="name">Namn: </label>
-        <input
-          type="text"
-          name="name"
-          onChange={props.onChange}
-          // value={props.value}
-        />
-        <br />
-        <br />
+        <NameInput onChange={props.onChange} />
         <SettingsMorningCards
           handleCheckbox={props.handleCheckbox}
           checkedCheckboxes={props.checkedCheckboxes}
         />
-        <br />
         <SettingsNightCards />
-        <br />
-        <p>
-          Du har {props.stars} insamlade stjärnor. Vill du börja om från noll?
-        </p>
-        <button className="small-button" onClick={props.deleteStars}>
-          Ja
-        </button>
+        <DeleteStars stars={props.stars} deleteStars={props.deleteStars} />
       </div>
 
       <button onClick={props.handleSettingsModal}>Tillbaka</button>
