@@ -2,7 +2,7 @@ import StarIcon from "./Star-icon";
 
 const Winner = (props) => {
   return (
-    <div className={`container ${props.className}`}>
+    <div className={`modal-container ${props.className}`}>
       <h2>Bra jobbat {props.name}!</h2>
       <StarIcon />
       <StarIcon style={{ animationDelay: "0.2s" }} />

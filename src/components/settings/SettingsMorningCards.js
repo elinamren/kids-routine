@@ -1,5 +1,5 @@
 import Checkbox from "./Checkbox";
-import morningCards from "./morningCards";
+import morningCards from "../morningCards";
 
 const SettingsMorningCards = (props) => {
   // const [isChecked, setIsChecked] = useState(false);
@@ -8,7 +8,7 @@ const SettingsMorningCards = (props) => {
   // }
   return (
     // loopa igenom, om namnet finns  i listan checked
-    <>
+    <div className="card-settings-container">
       <h4>Välj morgonuppgifter, 6st.</h4>
       {morningCards.map((card) => {
         return (
@@ -21,7 +21,7 @@ const SettingsMorningCards = (props) => {
           />
         );
       })}
-    </>
+    </div>
   );
 };
 

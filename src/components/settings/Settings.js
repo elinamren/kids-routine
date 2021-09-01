@@ -1,7 +1,8 @@
+import SettingsNightCards from "./SettingsNightCards";
 import SettingsMorningCards from "./SettingsMorningCards";
 const Settings = (props) => {
   return (
-    <div className={`container settings ${props.className}`}>
+    <div className={`modal-container settings ${props.className}`}>
       <h2>Inställningar</h2>
       <p>Här kan du ändra namn, vilka uppgifter som ska synas osv.</p>
       <div className="input-container">
@@ -19,8 +20,8 @@ const Settings = (props) => {
           handleCheckbox={props.handleCheckbox}
           checkedCheckboxes={props.checkedCheckboxes}
         />
-
         <br />
+        <SettingsNightCards />
         <br />
         <p>
           Du har {props.stars} insamlade stjärnor. Vill du börja om från noll?

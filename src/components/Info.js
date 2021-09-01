@@ -1,6 +1,6 @@
 const Info = (props) => {
   return (
-    <div className={`container ${props.className}`} style={props.style}>
+    <div className={`modal-container ${props.className}`} style={props.style}>
       <h2>Välkommen</h2>
       <p>
         Klara av alla morgon och kvällsuppgifter på ett kul och lekfullt sätt.

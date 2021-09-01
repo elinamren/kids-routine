@@ -5,7 +5,7 @@ import IconButton from "./components/Icon-button";
 import Info from "./components/Info";
 import { useEffect, useState } from "react";
 import Star from "./components/Star";
-import Settings from "./components/Settings";
+import Settings from "./components/settings/Settings";
 import Winner from "./components/Winner";
 import morningCards from "./components/morningCards";
 import { useMediaQuery } from "react-responsive";
