@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/kids-routine/static/css/main.b3310b0d.chunk.css",
-    "main.js": "/kids-routine/static/js/main.8b3f4b87.chunk.js",
-    "main.js.map": "/kids-routine/static/js/main.8b3f4b87.chunk.js.map",
+    "main.css": "/kids-routine/static/css/main.01b3d0b4.chunk.css",
+    "main.js": "/kids-routine/static/js/main.644724bb.chunk.js",
+    "main.js.map": "/kids-routine/static/js/main.644724bb.chunk.js.map",
     "runtime-main.js": "/kids-routine/static/js/runtime-main.0f44336e.js",
     "runtime-main.js.map": "/kids-routine/static/js/runtime-main.0f44336e.js.map",
-    "static/js/2.29b90758.chunk.js": "/kids-routine/static/js/2.29b90758.chunk.js",
-    "static/js/2.29b90758.chunk.js.map": "/kids-routine/static/js/2.29b90758.chunk.js.map",
+    "static/js/2.65feec40.chunk.js": "/kids-routine/static/js/2.65feec40.chunk.js",
+    "static/js/2.65feec40.chunk.js.map": "/kids-routine/static/js/2.65feec40.chunk.js.map",
     "index.html": "/kids-routine/index.html",
-    "static/css/main.b3310b0d.chunk.css.map": "/kids-routine/static/css/main.b3310b0d.chunk.css.map",
-    "static/js/2.29b90758.chunk.js.LICENSE.txt": "/kids-routine/static/js/2.29b90758.chunk.js.LICENSE.txt"
+    "static/css/main.01b3d0b4.chunk.css.map": "/kids-routine/static/css/main.01b3d0b4.chunk.css.map",
+    "static/js/2.65feec40.chunk.js.LICENSE.txt": "/kids-routine/static/js/2.65feec40.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0f44336e.js",
-    "static/js/2.29b90758.chunk.js",
-    "static/css/main.b3310b0d.chunk.css",
-    "static/js/main.8b3f4b87.chunk.js"
+    "static/js/2.65feec40.chunk.js",
+    "static/css/main.01b3d0b4.chunk.css",
+    "static/js/main.644724bb.chunk.js"
   ]
 }
