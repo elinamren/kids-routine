@@ -65,6 +65,12 @@ button {
   padding: 15px 40px;
   cursor: pointer;
   margin: 5px;
+  transition: 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.9);
+  animation-duration: 0.1;
 }
 
 .small-button {
