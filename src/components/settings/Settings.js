@@ -10,8 +10,9 @@ const Settings = (props) => {
       <div className="input-container">
         <NameInput onChange={props.onChange} saveName={props.saveName} />
         <SettingsMorningCards
-          handleCheckbox={props.handleCheckbox}
+          handleCheckboxMorning={props.handleCheckboxMorning}
           checkedCheckboxes={props.checkedCheckboxes}
+          saveMorning={props.saveMorning}
         />
         <SettingsNightCards />
         <DeleteStars stars={props.stars} deleteStars={props.deleteStars} />

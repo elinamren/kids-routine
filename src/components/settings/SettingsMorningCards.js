@@ -15,7 +15,7 @@ const SettingsMorningCards = (props) => {
           return (
             <Checkbox
               name={card.title}
-              handleCheckbox={props.handleCheckbox}
+              handleCheckbox={props.handleCheckboxMorning}
               key={card.id}
               id={card.id}
               // checked={props.checkedCheckboxes.includes(card.id) ? true : false}

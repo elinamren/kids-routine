@@ -14,7 +14,7 @@ function App() {
   const isMobile = useMediaQuery({ query: "(max-width: 650px)" });
 
   useEffect(() => {
-    handleNewCards();
+    handleNewMorningCards();
     getLocalKidsRoutine();
     // eslint-disable-next-line
   }, []);
@@ -112,7 +112,7 @@ function App() {
     "10",
   ]);
 
-  function handleCheckbox(event) {
+  function handleCheckboxMorning(event) {
     if (event.target.checked) {
       checkedCheckboxes.push(event.target.id);
     } else if (!event.target.checked) {
@@ -127,7 +127,7 @@ function App() {
 
   const [newMorningCards, setNewMorningCards] = useState([]);
 
-  function handleNewCards() {
+  function handleNewMorningCards() {
     if (checkedCheckboxes.length > 6 || checkedCheckboxes.length < 6) {
       alert("Du får välja 6 olika uppgifter");
     } else if (checkedCheckboxes.length === 6) {
@@ -140,7 +140,7 @@ function App() {
   }
 
   function handleSave() {
-    handleNewCards();
+    handleNewMorningCards();
     if (checkedCheckboxes.length === 6) {
       setIsSettingsOpen(false);
     }
@@ -245,8 +245,9 @@ function App() {
         className={isSettingsOpen ? "fade-in" : "fade-out"}
         onChange={handleInputValue}
         handleSave={handleSave}
+        saveMorning={handleNewMorningCards}
         deleteStars={deleteStars}
-        handleCheckbox={handleCheckbox}
+        handleCheckboxMorning={handleCheckboxMorning}
         value={name}
         saveName={handleName}
         stars={earnedStars.length}
