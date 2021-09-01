@@ -1,51 +1,51 @@
 const nightCards = [
   {
-    id: "1",
+    id: "11",
     title: "Häng upp jackan",
     image: "images/jacket.png",
   },
   {
-    id: "2",
+    id: "12",
     title: "Gör läxor",
     image: "images/book.png",
   },
   {
-    id: "3",
+    id: "13",
     title: "Duka av bordet",
     image: "images/dish.png",
   },
   {
-    id: "4",
+    id: "14",
     title: "Städa leksaker",
     image: "images/toys.png",
   },
   {
-    id: "5",
+    id: "15",
     title: "Städa rummet",
     image: "images/vacuum.png",
   },
   {
-    id: "6",
+    id: "16",
     title: "Läsa",
     image: "images/book.png",
   },
   {
-    id: "7",
+    id: "17",
     title: "Bada",
     image: "images/bath.png",
   },
   {
-    id: "8",
+    id: "18",
     title: "Borsta tänder",
     image: "images/toothbrush.png",
   },
   {
-    id: "9",
+    id: "19",
     title: "Gå på toa",
     image: "images/toilet.png",
   },
   {
-    id: "10",
+    id: "20",
     title: "Klä av dig",
     image: "images/clothes.png",
   },
