@@ -8,19 +8,24 @@ const SettingsMorningCards = (props) => {
   // }
   return (
     // loopa igenom, om namnet finns  i listan checked
-    <div className="settings-container">
-      <h4>Välj morgonuppgifter, 6st.</h4>
-      {morningCards.map((card) => {
-        return (
-          <Checkbox
-            name={card.title}
-            handleCheckbox={props.handleCheckbox}
-            key={card.id}
-            id={card.id}
-            // checked={props.checkedCheckboxes.includes(card.id) ? true : false}
-          />
-        );
-      })}
+    <div className="settings-container flexbox">
+      <div>
+        <h4>Välj morgonuppgifter, 6st.</h4>
+        {morningCards.map((card) => {
+          return (
+            <Checkbox
+              name={card.title}
+              handleCheckbox={props.handleCheckbox}
+              key={card.id}
+              id={card.id}
+              // checked={props.checkedCheckboxes.includes(card.id) ? true : false}
+            />
+          );
+        })}
+      </div>
+      <button className="small-button" onClick={props.saveMorning}>
+        Spara
+      </button>
     </div>
   );
 };
