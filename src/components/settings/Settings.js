@@ -11,15 +11,18 @@ const Settings = (props) => {
         <NameInput onChange={props.onChange} saveName={props.saveName} />
         <SettingsMorningCards
           handleCheckboxMorning={props.handleCheckboxMorning}
-          checkedCheckboxes={props.checkedCheckboxes}
+          // checkedCheckboxes={props.checkedCheckboxes}
           saveMorning={props.saveMorning}
         />
-        <SettingsNightCards />
+        <SettingsNightCards
+          handleCheckboxNight={props.handleCheckboxNight}
+          saveNight={props.saveNight}
+        />
         <DeleteStars stars={props.stars} deleteStars={props.deleteStars} />
       </div>
 
       <button onClick={props.handleSettingsModal}>Tillbaka</button>
-      <button onClick={props.handleSave}>Spara</button>
+      {/* <button onClick={props.handleSave}>Spara</button> */}
     </div>
   );
 };
