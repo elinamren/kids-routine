@@ -4,6 +4,7 @@ const NameInput = (props) => {
       <div>
         <label htmlFor="name">Namn: </label>
         <input
+          id="name-input"
           type="text"
           name="name"
           onChange={props.onChange}

@@ -41,8 +41,7 @@ h4 {
 }
 
 p,
-h4,
-label {
+h4 {
   font-size: 1.5rem;
   font-family: "Noto Sans", sans-serif;
 }
@@ -292,11 +291,19 @@ input {
   }
   p,
   h4,
-  input {
+  input,
+  label {
     font-size: 1rem;
   }
+  #name-input {
+    width: 65%;
+  }
   button {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    padding: 10px 30px;
+  }
+  .small-button {
+    padding: 5px 20px;
   }
   .modal-container {
     top: 50px;
