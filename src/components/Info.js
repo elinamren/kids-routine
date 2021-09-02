@@ -11,7 +11,7 @@ const Info = (props) => {
       <p>
         Detta är ett Hyper Island skolprojekt som är utvecklat av Elin Amrén,
         mer information hittar du på{" "}
-        <a href="https://github.com/elinamren/goodmorning">Github</a>.
+        <a href="https://github.com/elinamren/kids-routine">Github</a>.
       </p>
       <br />
       <h4>CRED</h4>
