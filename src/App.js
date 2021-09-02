@@ -51,10 +51,9 @@ function App() {
   }
 
   // THEME --- morning/night
-  const hour = new Date().getHours();
-
   const [isMorning, setIsMorning] = useState(false);
 
+  const hour = new Date().getHours();
   useEffect(() => {
     if (hour < 15) {
       setIsMorning(true);
@@ -127,6 +126,9 @@ function App() {
     "20",
   ]);
 
+  const [newMorningCards, setNewMorningCards] = useState([]);
+  const [newNightCards, setNewNightCards] = useState([]);
+
   function handleCheckboxMorning(event) {
     if (event.target.checked) {
       checkedCheckboxesMorning.push(event.target.id);
@@ -152,8 +154,6 @@ function App() {
     console.log(checkedCheckboxesNight);
   }
 
-  const [newMorningCards, setNewMorningCards] = useState([]);
-
   function handleNewMorningCards() {
     if (
       checkedCheckboxesMorning.length > 6 ||
@@ -168,8 +168,6 @@ function App() {
     }
     console.log(newMorningCards);
   }
-
-  const [newNightCards, setNewNightCards] = useState([]);
 
   function handleNewNightCards() {
     if (
