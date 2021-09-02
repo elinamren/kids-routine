@@ -8,6 +8,7 @@ import Star from "./components/Star";
 import Settings from "./components/settings/Settings";
 import Winner from "./components/Winner";
 import morningCards from "./components/morningCards";
+import nightCards from "./components/nightCards";
 import { useMediaQuery } from "react-responsive";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 
   useEffect(() => {
     handleNewMorningCards();
+    handleNewNightCards();
     getLocalKidsRoutine();
     // eslint-disable-next-line
   }, []);
@@ -41,7 +43,8 @@ function App() {
     });
   }
   function handleSettingsModal() {
-    setCheckedCheckboxes([]);
+    setCheckedCheckboxesMorning([]);
+    setCheckedCheckboxesNight([]);
     setIsSettingsOpen((prevValue) => {
       return !prevValue;
     });
@@ -103,7 +106,7 @@ function App() {
   }
 
   // Pick tasks  settings
-  const [checkedCheckboxes, setCheckedCheckboxes] = useState([
+  const [checkedCheckboxesMorning, setCheckedCheckboxesMorning] = useState([
     "2",
     "3",
     "4",
@@ -111,37 +114,76 @@ function App() {
     "9",
     "10",
   ]);
+  const [checkedCheckboxesNight, setCheckedCheckboxesNight] = useState([
+    "11",
+    "13",
+    "14",
+    "18",
+    "19",
+    "20",
+  ]);
 
   function handleCheckboxMorning(event) {
     if (event.target.checked) {
-      checkedCheckboxes.push(event.target.id);
+      checkedCheckboxesMorning.push(event.target.id);
     } else if (!event.target.checked) {
-      const newCardsArray = checkedCheckboxes.splice(
-        checkedCheckboxes.indexOf(event.target.id),
+      const newCardsArray = checkedCheckboxesMorning.splice(
+        checkedCheckboxesMorning.indexOf(event.target.id),
         1
       );
-      setCheckedCheckboxes(newCardsArray);
+      setCheckedCheckboxesMorning(newCardsArray);
     }
-    console.log(checkedCheckboxes);
+    console.log(checkedCheckboxesMorning);
+  }
+  function handleCheckboxNight(event) {
+    if (event.target.checked) {
+      checkedCheckboxesNight.push(event.target.id);
+    } else if (!event.target.checked) {
+      const newCardsArray = checkedCheckboxesNight.splice(
+        checkedCheckboxesNight.indexOf(event.target.id),
+        1
+      );
+      setCheckedCheckboxesNight(newCardsArray);
+    }
+    console.log(checkedCheckboxesNight);
   }
 
   const [newMorningCards, setNewMorningCards] = useState([]);
 
   function handleNewMorningCards() {
-    if (checkedCheckboxes.length > 6 || checkedCheckboxes.length < 6) {
+    if (
+      checkedCheckboxesMorning.length > 6 ||
+      checkedCheckboxesMorning.length < 6
+    ) {
       alert("Du får välja 6 olika uppgifter");
-    } else if (checkedCheckboxes.length === 6) {
+    } else if (checkedCheckboxesMorning.length === 6) {
       const newMorningTasks = morningCards.filter((card) =>
-        checkedCheckboxes.includes(card.id)
+        checkedCheckboxesMorning.includes(card.id)
       );
       setNewMorningCards(newMorningTasks);
     }
     console.log(newMorningCards);
   }
 
+  const [newNightCards, setNewNightCards] = useState([]);
+
+  function handleNewNightCards() {
+    if (
+      checkedCheckboxesNight.length > 6 ||
+      checkedCheckboxesNight.length < 6
+    ) {
+      alert("Du får välja 6 olika uppgifter");
+    } else if (checkedCheckboxesNight.length === 6) {
+      const newNightTasks = nightCards.filter((card) =>
+        checkedCheckboxesNight.includes(card.id)
+      );
+      setNewNightCards(newNightTasks);
+    }
+    console.log(newNightCards);
+  }
   function handleSave() {
     handleNewMorningCards();
-    if (checkedCheckboxes.length === 6) {
+    if (checkedCheckboxesMorning.length === 6) {
       setIsSettingsOpen(false);
     }
   }
@@ -150,12 +192,12 @@ function App() {
   //SAVE TO LOCAL STORAGE
 
   const nameStorage = "KidsRoutineNameLocalStorage";
-  const cardsStorage = "KidsRoutineCardsLocalStorage";
+  const morningCardsStorage = "KidsRoutineMorningCardsLocalStorage";
   const starsStorage = "KidsRoutineStarsLocalStorage";
 
   const saveLocalItems = () => {
     localStorage.setItem(nameStorage, JSON.stringify(name));
-    localStorage.setItem(cardsStorage, JSON.stringify(newMorningCards));
+    localStorage.setItem(morningCardsStorage, JSON.stringify(newMorningCards));
     localStorage.setItem(starsStorage, JSON.stringify(earnedStars));
   };
 
@@ -172,10 +214,15 @@ function App() {
       let StarsFromLocal = JSON.parse(localStorage.getItem(starsStorage));
       setEarnedStars(StarsFromLocal);
     }
-    if (localStorage.getItem(cardsStorage) === null) {
-      localStorage.setItem(cardsStorage, JSON.stringify(newMorningCards));
+    if (localStorage.getItem(morningCardsStorage) === null) {
+      localStorage.setItem(
+        morningCardsStorage,
+        JSON.stringify(newMorningCards)
+      );
     } else {
-      let CardsFromLocal = JSON.parse(localStorage.getItem(cardsStorage));
+      let CardsFromLocal = JSON.parse(
+        localStorage.getItem(morningCardsStorage)
+      );
       setNewMorningCards(CardsFromLocal);
     }
   };
@@ -245,13 +292,15 @@ function App() {
         className={isSettingsOpen ? "fade-in" : "fade-out"}
         onChange={handleInputValue}
         handleSave={handleSave}
-        saveMorning={handleNewMorningCards}
         deleteStars={deleteStars}
+        saveMorning={handleNewMorningCards}
         handleCheckboxMorning={handleCheckboxMorning}
+        saveNight={handleNewNightCards}
+        handleCheckboxNight={handleCheckboxNight}
         value={name}
         saveName={handleName}
         stars={earnedStars.length}
-        checkedCheckboxes={checkedCheckboxes}
+        // checkedCheckboxes={checkedCheckboxes}
       />
       <Winner
         name={name}
