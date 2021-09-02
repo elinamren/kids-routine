@@ -192,13 +192,15 @@ function App() {
   //SAVE TO LOCAL STORAGE
 
   const nameStorage = "KidsRoutineNameLocalStorage";
-  const morningCardsStorage = "KidsRoutineMorningCardsLocalStorage";
   const starsStorage = "KidsRoutineStarsLocalStorage";
+  const morningCardsStorage = "KidsRoutineMorningCardsLocalStorage";
+  const nightCardsStorage = "KidsRoutineNightCardsLocalStorage";
 
   const saveLocalItems = () => {
     localStorage.setItem(nameStorage, JSON.stringify(name));
-    localStorage.setItem(morningCardsStorage, JSON.stringify(newMorningCards));
     localStorage.setItem(starsStorage, JSON.stringify(earnedStars));
+    localStorage.setItem(morningCardsStorage, JSON.stringify(newMorningCards));
+    localStorage.setItem(nightCardsStorage, JSON.stringify(newNightCards));
   };
 
   const getLocalKidsRoutine = () => {
@@ -224,6 +226,12 @@ function App() {
         localStorage.getItem(morningCardsStorage)
       );
       setNewMorningCards(CardsFromLocal);
+    }
+    if (localStorage.getItem(nightCardsStorage) === null) {
+      localStorage.setItem(nightCardsStorage, JSON.stringify(newNightCards));
+    } else {
+      let CardsFromLocal = JSON.parse(localStorage.getItem(nightCardsStorage));
+      setNewNightCards(CardsFromLocal);
     }
   };
 
