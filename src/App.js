@@ -63,6 +63,10 @@ function App() {
     }
   }, [hour]);
 
+  useEffect(() => {
+    setIsWinnerOpen(false);
+  }, [isMorning]);
+
   // NAME
   const [inputValue, setInputValue] = useState("");
   const [name, setName] = useState("");
@@ -181,12 +185,12 @@ function App() {
     }
     console.log(newNightCards);
   }
-  function handleSave() {
-    handleNewMorningCards();
-    if (checkedCheckboxesMorning.length === 6) {
-      setIsSettingsOpen(false);
-    }
-  }
+  // function handleSave() {
+  //   handleNewMorningCards();
+  //   if (checkedCheckboxesMorning.length === 6) {
+  //     setIsSettingsOpen(false);
+  //   }
+  // }
   // -------------------
 
   //SAVE TO LOCAL STORAGE
@@ -238,7 +242,7 @@ function App() {
   useEffect(() => {
     saveLocalItems();
     // eslint-disable-next-line
-  }, [name, earnedStars, newMorningCards]);
+  }, [name, earnedStars, newMorningCards, newNightCards]);
 
   return (
     <div
@@ -250,7 +254,12 @@ function App() {
       }}
     >
       <Header name={name} isMorning={isMorning} />
-      <Cards onClick={countStars} newMorningCards={newMorningCards} />
+      <Cards
+        onClick={countStars}
+        newMorningCards={newMorningCards}
+        newNightCards={newNightCards}
+        isMorning={isMorning}
+      />
       <IconButton
         src="images/info.png"
         alt="info"
@@ -299,7 +308,7 @@ function App() {
         handleSettingsModal={handleSettingsModal}
         className={isSettingsOpen ? "fade-in" : "fade-out"}
         onChange={handleInputValue}
-        handleSave={handleSave}
+        // handleSave={handleSave}
         deleteStars={deleteStars}
         saveMorning={handleNewMorningCards}
         handleCheckboxMorning={handleCheckboxMorning}
