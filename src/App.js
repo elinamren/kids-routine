@@ -14,12 +14,17 @@ import { useMediaQuery } from "react-responsive";
 function App() {
   const isMobile = useMediaQuery({ query: "(max-width: 650px)" });
 
+  // Get the saved cards when site render
   useEffect(() => {
     handleNewMorningCards();
     handleNewNightCards();
     getLocalKidsRoutine();
     // eslint-disable-next-line
   }, []);
+
+  // SOUND
+  const winnerAudio = new Audio("sound/win.mp3");
+  const starAudio = new Audio("sound/star.mp3");
 
   // MODALS
   const [isInfoOpen, setIsInfoOpen] = useState(false);
@@ -87,15 +92,19 @@ function App() {
       console.log("Winner");
       setTimeout(() => {
         setIsWinnerOpen(true);
+        winnerAudio.play();
       }, 1700);
     }
+    // eslint-disable-next-line
   }, [flippedCards]);
+
   function countStars(event) {
     if (!event.target.classList.contains("flipped")) {
       setEarnedStars((prevValue) => [...prevValue, prevValue.length + 1]);
       event.target.classList.add("flipped");
       setFlippedCards((prevValue) => prevValue + 1);
       console.log(flippedCards);
+      starAudio.play();
     }
   }
 
