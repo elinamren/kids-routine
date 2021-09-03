@@ -68,18 +68,26 @@ button {
   transition: 0.3s ease;
 }
 
+button:hover {
+  background-color: rgb(43, 43, 43);
+}
+
 button:active {
   transform: scale(0.9);
   animation-duration: 0.1;
 }
 
 .small-button {
-  background-color: white;
+  background-color: rgb(255, 255, 148);
   color: black;
   border: 2px solid black;
   padding: 10px 30px;
   display: inline-block;
   margin: 0;
+}
+
+.small-button:hover {
+  background-color: rgb(255, 255, 73);
 }
 
 .cards-container {
@@ -169,6 +177,12 @@ button:active {
 #star-button {
   bottom: 20px;
   left: 20px;
+}
+
+#info-button:hover,
+#star-button:hover,
+#settings-button:hover {
+  background-color: transparent;
 }
 
 /* Modal ---------*/
