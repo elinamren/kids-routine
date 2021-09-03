@@ -15,6 +15,7 @@ const Winner = (props) => {
         stjärnor. Du har klarat alla uppgifter som finns just nu, kom tillbaka
         igen i {props.isMorning ? "kväll" : "morgon"}.
       </p>
+      <br />
       <button onClick={props.handleWinnerModal}>TEST MODE</button>
     </div>
   );

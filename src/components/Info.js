@@ -26,7 +26,9 @@ const Info = (props) => {
         </a>
       </p>
       <br />
-      <button onClick={props.onClick}>Stäng</button>
+      <div className="return-button-container">
+        <button onClick={props.onClick}>Stäng</button>
+      </div>
     </div>
   );
 };

@@ -7,7 +7,9 @@ const Star = (props) => {
       </p>
       <div className="star-board">{props.starDisplay}</div>
       <br />
-      <button onClick={props.onClick}>Tillbaka</button>
+      <div className="return-button-container">
+        <button onClick={props.onClick}>Tillbaka</button>
+      </div>
     </div>
   );
 };
