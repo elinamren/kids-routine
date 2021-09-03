@@ -7,7 +7,7 @@ const nightCards = [
   {
     id: "12",
     title: "Gör läxor",
-    image: "images/book.png",
+    image: "images/homework.png",
   },
   {
     id: "13",

@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   // SOUND
-  const winnerAudio = new Audio("sound/win.mp3");
+  const winnerAudio = new Audio("sound/winner.mp3");
   const starAudio = new Audio("sound/star.mp3");
 
   // MODALS
