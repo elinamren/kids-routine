@@ -11,9 +11,9 @@ const Winner = (props) => {
       <StarIcon style={{ animationDelay: "0.5s" }} />
       <StarIcon style={{ animationDelay: "1s" }} />
       <p>
-        Du Har hittils samlat ihop {props.star} stjärnor. Du har klarat alla
-        uppgifter som finns just nu. Kom tillbaka igen i{" "}
-        {props.isMorning ? "kväll" : "morgon"}.
+        Grattis till 6 nya stjärnor. Du har hittils samlat ihop {props.star}{" "}
+        stjärnor. Du har klarat alla uppgifter som finns just nu, kom tillbaka
+        igen i {props.isMorning ? "kväll" : "morgon"}.
       </p>
       <button onClick={props.handleWinnerModal}>TEST MODE</button>
     </div>
