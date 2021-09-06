@@ -329,7 +329,7 @@ function App() {
         value={name}
         saveName={handleName}
         stars={earnedStars.length}
-        // checkedCheckboxes={checkedCheckboxes}
+        // checkedCheckboxesMorning={checkedCheckboxesMorning}
       />
       <Winner
         name={name}

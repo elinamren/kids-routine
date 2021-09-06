@@ -11,7 +11,7 @@ const Settings = (props) => {
         <NameInput onChange={props.onChange} saveName={props.saveName} />
         <SettingsMorningCards
           handleCheckboxMorning={props.handleCheckboxMorning}
-          // checkedCheckboxes={props.checkedCheckboxes}
+          // checkedCheckboxesMorning={props.checkedCheckboxesMorning}
           saveMorning={props.saveMorning}
         />
         <SettingsNightCards

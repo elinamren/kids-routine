@@ -2,10 +2,8 @@ import Checkbox from "./Checkbox";
 import morningCards from "../morningCards";
 
 const SettingsMorningCards = (props) => {
-  // const [isChecked, setIsChecked] = useState(false);
-  // if (props.checkedCheckboxes.includes(card.title)) {
-  //   setIsChecked(true);
-  // }
+  console.log(props.checkedCheckboxesMorning);
+
   return (
     // loopa igenom, om namnet finns  i listan checked
     <div className="settings-container flexbox">
@@ -18,7 +16,9 @@ const SettingsMorningCards = (props) => {
               handleCheckbox={props.handleCheckboxMorning}
               key={card.id}
               id={card.id}
-              // checked={props.checkedCheckboxes.includes(card.id) ? true : false}
+              // checked={
+              //   props.checkedCheckboxesMorning.includes(card.id) ? true : false
+              // }
             />
           );
         })}
