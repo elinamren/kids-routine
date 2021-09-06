@@ -79,7 +79,10 @@ function App() {
     setInputValue(event.target.value);
   }
   function handleName() {
-    setName(inputValue);
+    const nameLower = inputValue.toLowerCase();
+    const nameFirstUpper =
+      nameLower.charAt(0).toUpperCase() + nameLower.slice(1);
+    setName(nameFirstUpper);
     setInputValue("");
   }
 
