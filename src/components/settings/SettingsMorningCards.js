@@ -2,8 +2,6 @@ import Checkbox from "./Checkbox";
 import morningCards from "../morningCards";
 
 const SettingsMorningCards = (props) => {
-  console.log(props.checkedCheckboxesMorning);
-
   return (
     // loopa igenom, om namnet finns  i listan checked
     <div className="settings-container flexbox">

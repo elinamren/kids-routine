@@ -326,7 +326,7 @@ function App() {
         handleCheckboxMorning={handleCheckboxMorning}
         saveNight={handleNewNightCards}
         handleCheckboxNight={handleCheckboxNight}
-        value={name}
+        value={inputValue}
         saveName={handleName}
         stars={earnedStars.length}
         // checkedCheckboxesMorning={checkedCheckboxesMorning}
