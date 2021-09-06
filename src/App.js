@@ -268,15 +268,15 @@ function App() {
         isMorning={isMorning}
       />
       <IconButton
-        src="images/info.svg"
-        style={{ color: isMorning ? "black" : "white" }}
+        src={isMorning ? "images/info-black.png" : "images/info-white.png"}
         alt="info"
         id="info-button"
         onClick={handleInfoModal}
       />
       <IconButton
-        src="images/settings.svg"
-        style={{ color: isMorning ? "black" : "white" }}
+        src={
+          isMorning ? "images/settings-black.png" : "images/settings-white.png"
+        }
         alt="settings"
         id="settings-button"
         onClick={handleSettingsModal}
