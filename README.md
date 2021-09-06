@@ -23,6 +23,7 @@ I have added a list with different words to the back of the cards. But they rend
 ### Tools used
 
 - React.js
+- [react-responsive](https://www.npmjs.com/package/react-responsive)
 - Figma
 - Miro
 
