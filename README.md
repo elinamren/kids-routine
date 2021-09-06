@@ -15,8 +15,10 @@ I want to focus on and improve my Javascript and React skills. I choosed an old 
 
 ### Challenges
 
-Its hard to figure out a good visual settings page for the best UX.
-I started to look at firebase but took a decition to wait, since I want to focus on JS and React firebase is not prioritized. I will keep it in my nice to have list if I got time futher ahead.
+Its hard to figure out a good visual settings page for the best UX.  
+I started to look at firebase but took a decition to wait, since I want to focus on JS and React firebase is not prioritized. I will keep it in my nice to have list if I got time futher ahead.  
+I'm not sure how to get the default list with cards to be checked from the start at the settings checkboxes.  
+I have added a list with different words to the back of the cards. But they render on every flip. I want they to render once.
 
 ### Tools used
 
@@ -26,7 +28,8 @@ I started to look at firebase but took a decition to wait, since I want to focus
 
 ### Cred
 
-Icons made by [Freepik](https://www.freepik.com) from [Flaticon](https://www.flaticon.com/)
+Icons made by [Freepik](https://www.freepik.com) from [Flaticon](https://www.flaticon.com/)  
+Sound from www.freesound.org
 
 ### Areas to improve
 
