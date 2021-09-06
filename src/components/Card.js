@@ -1,19 +1,4 @@
 const Card = (props) => {
-  const superlativ = [
-    "Bra!",
-    "Fantastiskt",
-    "Heja!",
-    "Wow",
-    "Snyggt",
-    "Du är bäst",
-    "Fint!",
-    "Toppen!",
-  ];
-
-  const number = Math.floor(Math.random() * superlativ.length);
-
-  const randomWord = superlativ[number];
-
   return (
     <div className="card" onClick={props.onClick}>
       <div className="card-inner">
@@ -23,7 +8,7 @@ const Card = (props) => {
         </div>
         <div className="card-back">
           <img src="images/star.png" alt="star" className="icon" />
-          <h3>{randomWord}</h3>
+          <h3>{props.randomWord}</h3>
         </div>
       </div>
     </div>
