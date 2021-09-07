@@ -72,18 +72,13 @@ function App() {
   }, [isMorning]);
 
   // NAME
-  const [inputValue, setInputValue] = useState("");
   const [name, setName] = useState("");
 
-  function handleInputValue(event) {
-    setInputValue(event.target.value);
-  }
-  function handleName() {
+  function handleName(inputValue) {
     const nameLower = inputValue.toLowerCase();
     const nameFirstUpper =
       nameLower.charAt(0).toUpperCase() + nameLower.slice(1);
     setName(nameFirstUpper);
-    setInputValue("");
   }
 
   // FLIP CARDS & COUNT STARS
@@ -319,14 +314,12 @@ function App() {
       <Settings
         handleSettingsModal={handleSettingsModal}
         className={isSettingsOpen ? "fade-in" : "fade-out"}
-        onChange={handleInputValue}
         // handleSave={handleSave}
         deleteStars={deleteStars}
         saveMorning={handleNewMorningCards}
         handleCheckboxMorning={handleCheckboxMorning}
         saveNight={handleNewNightCards}
         handleCheckboxNight={handleCheckboxNight}
-        value={inputValue}
         saveName={handleName}
         stars={earnedStars.length}
         // checkedCheckboxesMorning={checkedCheckboxesMorning}
