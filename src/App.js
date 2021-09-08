@@ -32,11 +32,6 @@ function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isWinnerOpen, setIsWinnerOpen] = useState(false);
 
-  function handleWinnerModal() {
-    setIsWinnerOpen((prevValue) => {
-      return !prevValue;
-    });
-  }
   function handleInfoModal() {
     setIsInfoOpen((prevValue) => {
       return !prevValue;
@@ -189,13 +184,6 @@ function App() {
     }
     console.log(newNightCards);
   }
-  // function handleSave() {
-  //   handleNewMorningCards();
-  //   if (checkedCheckboxesMorning.length === 6) {
-  //     setIsSettingsOpen(false);
-  //   }
-  // }
-  // -------------------
 
   //SAVE TO LOCAL STORAGE
 
@@ -313,7 +301,6 @@ function App() {
       <Settings
         handleSettingsModal={handleSettingsModal}
         className={isSettingsOpen ? "fade-in" : "fade-out"}
-        // handleSave={handleSave}
         deleteStars={deleteStars}
         saveMorning={handleNewMorningCards}
         handleCheckboxMorning={handleCheckboxMorning}
@@ -327,7 +314,6 @@ function App() {
       <Winner
         name={name}
         star={earnedStars.length}
-        handleWinnerModal={handleWinnerModal}
         className={isWinnerOpen ? "fade-in" : "fade-out"}
         isMorning={isMorning}
       />
