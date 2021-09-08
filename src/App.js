@@ -62,6 +62,7 @@ function App() {
 
   useEffect(() => {
     setIsWinnerOpen(false);
+    window.location.reload();
   }, [isMorning]);
 
   // NAME
@@ -141,8 +142,8 @@ function App() {
       );
       setCheckedCheckboxesMorning(newCardsArray);
     }
-    console.log(checkedCheckboxesMorning);
   }
+
   function handleCheckboxNight(event) {
     if (event.target.checked) {
       setCheckedCheckboxesNight((prevValue) => [...prevValue, event.target.id]);
@@ -152,37 +153,28 @@ function App() {
       );
       setCheckedCheckboxesNight(newCardsArray);
     }
-    console.log(checkedCheckboxesNight);
   }
 
   function handleNewMorningCards() {
-    if (
-      checkedCheckboxesMorning.length > 6 ||
-      checkedCheckboxesMorning.length < 6
-    ) {
-      alert("Du får välja 6 olika uppgifter");
-    } else if (checkedCheckboxesMorning.length === 6) {
+    if (checkedCheckboxesMorning.length === 6) {
       const newMorningTasks = morningCards.filter((card) =>
         checkedCheckboxesMorning.includes(card.id)
       );
       setNewMorningCards(newMorningTasks);
+    } else {
+      alert("Du får välja 6 olika uppgifter");
     }
-    console.log(newMorningCards);
   }
 
   function handleNewNightCards() {
-    if (
-      checkedCheckboxesNight.length > 6 ||
-      checkedCheckboxesNight.length < 6
-    ) {
-      alert("Du får välja 6 olika uppgifter");
-    } else if (checkedCheckboxesNight.length === 6) {
+    if (checkedCheckboxesNight.length === 6) {
       const newNightTasks = nightCards.filter((card) =>
         checkedCheckboxesNight.includes(card.id)
       );
       setNewNightCards(newNightTasks);
+    } else {
+      alert("Du får välja 6 olika uppgifter");
     }
-    console.log(newNightCards);
   }
 
   //SAVE TO LOCAL STORAGE
