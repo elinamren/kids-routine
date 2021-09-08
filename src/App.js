@@ -80,7 +80,6 @@ function App() {
 
   useEffect(() => {
     if (flippedCards === 6) {
-      console.log("Winner");
       setTimeout(() => {
         setIsWinnerOpen(true);
         winnerAudio.play();
@@ -94,7 +93,6 @@ function App() {
       setEarnedStars((prevValue) => [...prevValue, prevValue.length + 1]);
       event.target.classList.add("flipped");
       setFlippedCards((prevValue) => prevValue + 1);
-      console.log(flippedCards);
       starAudio.play();
     }
   }
