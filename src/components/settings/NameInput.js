@@ -16,6 +16,7 @@ const NameInput = (props) => {
           name="name"
           onChange={handleInputValue}
           value={inputValue}
+          autocomplete="off"
         />
       </div>
       <button
