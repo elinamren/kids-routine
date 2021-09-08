@@ -48,8 +48,6 @@ function App() {
     });
   }
   function handleSettingsModal() {
-    setCheckedCheckboxesMorning([]);
-    setCheckedCheckboxesNight([]);
     setIsSettingsOpen((prevValue) => {
       return !prevValue;
     });
@@ -138,11 +136,13 @@ function App() {
 
   function handleCheckboxMorning(event) {
     if (event.target.checked) {
-      checkedCheckboxesMorning.push(event.target.id);
-    } else if (!event.target.checked) {
-      const newCardsArray = checkedCheckboxesMorning.splice(
-        checkedCheckboxesMorning.indexOf(event.target.id),
-        1
+      setCheckedCheckboxesMorning((prevValue) => [
+        ...prevValue,
+        event.target.id,
+      ]);
+    } else {
+      const newCardsArray = checkedCheckboxesMorning.filter(
+        (card) => card !== event.target.id
       );
       setCheckedCheckboxesMorning(newCardsArray);
     }
@@ -150,11 +150,10 @@ function App() {
   }
   function handleCheckboxNight(event) {
     if (event.target.checked) {
-      checkedCheckboxesNight.push(event.target.id);
-    } else if (!event.target.checked) {
-      const newCardsArray = checkedCheckboxesNight.splice(
-        checkedCheckboxesNight.indexOf(event.target.id),
-        1
+      setCheckedCheckboxesNight((prevValue) => [...prevValue, event.target.id]);
+    } else {
+      const newCardsArray = checkedCheckboxesNight.filter(
+        (card) => card !== event.target.id
       );
       setCheckedCheckboxesNight(newCardsArray);
     }
@@ -322,7 +321,8 @@ function App() {
         handleCheckboxNight={handleCheckboxNight}
         saveName={handleName}
         stars={earnedStars.length}
-        // checkedCheckboxesMorning={checkedCheckboxesMorning}
+        checkedCheckboxesMorning={checkedCheckboxesMorning}
+        checkedCheckboxesNight={checkedCheckboxesNight}
       />
       <Winner
         name={name}

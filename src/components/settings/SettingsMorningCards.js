@@ -14,9 +14,9 @@ const SettingsMorningCards = (props) => {
               handleCheckbox={props.handleCheckboxMorning}
               key={card.id}
               id={card.id}
-              // checked={
-              //   props.checkedCheckboxesMorning.includes(card.id) ? true : false
-              // }
+              checked={
+                props.checkedCheckboxesMorning.includes(card.id) ? true : false
+              }
             />
           );
         })}
