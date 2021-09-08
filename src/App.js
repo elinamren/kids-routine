@@ -191,12 +191,22 @@ function App() {
   const starsStorage = "KidsRoutineStarsLocalStorage";
   const morningCardsStorage = "KidsRoutineMorningCardsLocalStorage";
   const nightCardsStorage = "KidsRoutineNightCardsLocalStorage";
+  const checkboxMorningStorage = "KidsRoutineCheckboxMorningLocalStorage";
+  const checkboxNightStorage = "KidsRoutineCheckboxNightLocalStorage";
 
   const saveLocalItems = () => {
     localStorage.setItem(nameStorage, JSON.stringify(name));
     localStorage.setItem(starsStorage, JSON.stringify(earnedStars));
     localStorage.setItem(morningCardsStorage, JSON.stringify(newMorningCards));
     localStorage.setItem(nightCardsStorage, JSON.stringify(newNightCards));
+    localStorage.setItem(
+      checkboxMorningStorage,
+      JSON.stringify(checkedCheckboxesMorning)
+    );
+    localStorage.setItem(
+      checkboxNightStorage,
+      JSON.stringify(checkedCheckboxesNight)
+    );
   };
 
   const getLocalKidsRoutine = () => {
@@ -229,12 +239,42 @@ function App() {
       let CardsFromLocal = JSON.parse(localStorage.getItem(nightCardsStorage));
       setNewNightCards(CardsFromLocal);
     }
+
+    if (localStorage.getItem(checkboxMorningStorage) === null) {
+      localStorage.setItem(
+        checkboxMorningStorage,
+        JSON.stringify(checkedCheckboxesMorning)
+      );
+    } else {
+      let checkedFromLocal = JSON.parse(
+        localStorage.getItem(checkboxMorningStorage)
+      );
+      setCheckedCheckboxesMorning(checkedFromLocal);
+    }
+    if (localStorage.getItem(checkboxNightStorage) === null) {
+      localStorage.setItem(
+        checkboxNightStorage,
+        JSON.stringify(checkedCheckboxesNight)
+      );
+    } else {
+      let checkedFromLocal = JSON.parse(
+        localStorage.getItem(checkboxNightStorage)
+      );
+      setCheckedCheckboxesNight(checkedFromLocal);
+    }
   };
 
   useEffect(() => {
     saveLocalItems();
     // eslint-disable-next-line
-  }, [name, earnedStars, newMorningCards, newNightCards]);
+  }, [
+    name,
+    earnedStars,
+    newMorningCards,
+    newNightCards,
+    checkedCheckboxesMorning,
+    checkedCheckboxesNight,
+  ]);
 
   return (
     <div
