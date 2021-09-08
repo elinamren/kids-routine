@@ -62,7 +62,6 @@ function App() {
 
   useEffect(() => {
     setIsWinnerOpen(false);
-    window.location.reload();
   }, [isMorning]);
 
   // NAME
