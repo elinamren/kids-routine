@@ -13,6 +13,9 @@ const SettingsNightCards = (props) => {
               handleCheckbox={props.handleCheckboxNight}
               key={card.id}
               id={card.id}
+              checked={
+                props.checkedCheckboxesNight.includes(card.id) ? true : false
+              }
             />
           );
         })}

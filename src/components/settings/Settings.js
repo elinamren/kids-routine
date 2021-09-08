@@ -15,11 +15,12 @@ const Settings = (props) => {
         />
         <SettingsMorningCards
           handleCheckboxMorning={props.handleCheckboxMorning}
-          // checkedCheckboxesMorning={props.checkedCheckboxesMorning}
+          checkedCheckboxesMorning={props.checkedCheckboxesMorning}
           saveMorning={props.saveMorning}
         />
         <SettingsNightCards
           handleCheckboxNight={props.handleCheckboxNight}
+          checkedCheckboxesNight={props.checkedCheckboxesNight}
           saveNight={props.saveNight}
         />
         <DeleteStars stars={props.stars} deleteStars={props.deleteStars} />
