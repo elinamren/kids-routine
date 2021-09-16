@@ -10,7 +10,7 @@ const Checkbox = (props) => {
         checked={props.checked}
         id={props.id}
       />
-      <label htmlFor={props.name}>{props.name}</label>
+      <label for={props.id}>{props.name}</label>
     </div>
   );
 };

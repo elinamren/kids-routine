@@ -5,7 +5,7 @@ import DeleteStars from "./DeleteStars";
 const Settings = (props) => {
   return (
     <div className={`modal-container settings ${props.className}`}>
-      <h2>Inställningar</h2>
+      <h3>Inställningar</h3>
       <p>Här kan du ändra namn, vilka uppgifter som ska synas osv.</p>
       <div className="input-container">
         <NameInput

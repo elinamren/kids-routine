@@ -9,7 +9,7 @@ const NameInput = (props) => {
   return (
     <div className="settings-container flexbox">
       <div>
-        <label htmlFor="name">Namn: </label>
+        <label for="name-input">Namn: </label>
         <input
           id="name-input"
           type="text"

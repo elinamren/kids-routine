@@ -4,11 +4,11 @@ const Card = (props) => {
       <div className="card-inner">
         <div className="card-front">
           <img src={props.src} alt={props.alt} className="icon" />
-          <h3>{props.title}</h3>
+          <h2>{props.title}</h2>
         </div>
         <div className="card-back">
           <img src="images/star.png" alt="star" className="icon" />
-          <h3>{props.randomWord}</h3>
+          <h2>{props.randomWord}</h2>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@
 }
 
 h1,
-h2 {
+h3 {
   font-family: "Love Ya Like A Sister", cursive;
   text-transform: uppercase;
 }
@@ -24,15 +24,14 @@ h2 {
 h1 {
   font-size: 4.5rem;
 }
-
 h2 {
-  font-size: 3rem;
-  padding-bottom: 15px;
+  font-family: "Amatic SC", cursive;
+  font-size: 2rem;
 }
 
 h3 {
-  font-family: "Amatic SC", cursive;
-  font-size: 2rem;
+  font-size: 3rem;
+  padding-bottom: 15px;
 }
 
 h4 {
@@ -305,10 +304,10 @@ input {
     line-height: 2.1rem;
   }
   h2 {
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
   h3 {
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
   p,
   h4,
