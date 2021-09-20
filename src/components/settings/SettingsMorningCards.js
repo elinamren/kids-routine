@@ -6,7 +6,7 @@ const SettingsMorningCards = (props) => {
     // loopa igenom, om namnet finns  i listan checked
     <div className="settings-container flexbox">
       <div>
-        <h4>Välj morgonuppgifter, 6st.</h4>
+        <h3>Välj morgonuppgifter, 6st.</h3>
         {morningCards.map((card) => {
           return (
             <Checkbox

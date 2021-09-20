@@ -16,7 +16,7 @@
 }
 
 h1,
-h3 {
+.modal-container h2 {
   font-family: "Love Ya Like A Sister", cursive;
   text-transform: uppercase;
 }
@@ -29,18 +29,18 @@ h2 {
   font-size: 2rem;
 }
 
-h3 {
+.modal-container h2 {
   font-size: 3rem;
   padding-bottom: 15px;
 }
 
-h4 {
+h3 {
   text-transform: uppercase;
   padding-bottom: 0.4rem;
 }
 
 p,
-h4 {
+h3 {
   font-size: 1.5rem;
   font-family: "Noto Sans", sans-serif;
 }
@@ -306,11 +306,11 @@ input {
   h2 {
     font-size: 1.25rem;
   }
-  h3 {
+  .modal-container h2 {
     font-size: 2rem;
   }
   p,
-  h4,
+  h3,
   input,
   label {
     font-size: 1rem;

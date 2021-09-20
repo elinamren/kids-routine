@@ -1,7 +1,7 @@
 const Star = (props) => {
   return (
     <div className={`modal-container ${props.className}`}>
-      <h3>Stjärnor</h3>
+      <h2>Stjärnor</h2>
       <p>
         Bra jobbat {props.name}, du har samlat {props.star} stjärnor.
       </p>

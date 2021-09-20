@@ -5,7 +5,7 @@ const SettingsNightCards = (props) => {
   return (
     <div className="settings-container flexbox">
       <div>
-        <h4>Välj kvällsuppgifter, 6st.</h4>
+        <h3>Välj kvällsuppgifter, 6st.</h3>
         {nightCards.map((card) => {
           return (
             <Checkbox
