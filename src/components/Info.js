@@ -1,7 +1,7 @@
 const Info = (props) => {
   return (
     <div className={`modal-container ${props.className}`} style={props.style}>
-      <h2>Välkommen</h2>
+      <h3>Välkommen</h3>
       <p>
         Klara av alla morgon och kvällsuppgifter på ett kul och lekfullt sätt.
         Välj vilka uppgifter som passar dig bäst och samla så många stjärnor du
