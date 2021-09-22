@@ -24,6 +24,7 @@ I have added a list with different words to the back of the cards. But they rend
 
 - React.js
 - [react-responsive](https://www.npmjs.com/package/react-responsive)
+- Local Storage
 - Figma
 - Miro
 
@@ -34,7 +35,7 @@ Sound from www.freesound.org
 
 ### Areas to improve
 
-TBA
+React context
 
 ### Conclution
 
